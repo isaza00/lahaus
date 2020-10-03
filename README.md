@@ -22,3 +22,8 @@ PUT api/v1/users/<id>
 DELETE api/v1/users/<id>
 # create user
 POST api/v1/users/
+
+GET /api/v1/users/<id>/properties/
+# show properties by user id
+GET /api/v1/properties
+# show all properties
