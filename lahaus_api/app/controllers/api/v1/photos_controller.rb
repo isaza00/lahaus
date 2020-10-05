@@ -13,26 +13,24 @@ class Api::V1::PhotosController < ApplicationController
     end
   end
 
-  # SHOW PHOTO BY ID /api/v1/properties/<property_id>/<photo_id>
+  # SHOW PHOTO BY ID /api/v1/photos/<photo_id>
   def show
     begin
-      property = Property.find(params[:property_id])
-      photos = property.photo_id
-      render json: {photos: photos}
+      photo = Property.find(params[:photo_id])
+      render json: {photo: photo}, status: :ok
     rescue => e
       render json: { errors: e.message}, status: 404
     end
   end
 
-  # DELETE BY ID /api/v1/properties/<property_id>/<photo_id>
+  # DELETE BY ID /api/v1/photos/<photo_id>
   def destroy
     begin
-      property = Property.find(params[:property_id])
-      photos = property.photo_id
-      if photos.destroy
+      photo = Property.find(params[:photo_id])
+      if photo.destroy
         render json: {}, status: :ok
       else
-        render json: { errors: property.errors.messages }, status: 422
+        render json: { errors: photo.errors.messages }, status: 422
       end
     rescue => e
       render json: { errors: e.message}, status: 404
