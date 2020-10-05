@@ -43,7 +43,7 @@ class Api::V1::PhotosController < ApplicationController
     photo = Photo.new(photo_params)
     photo.user_id = photo_id
     if photo.save
-      render json: property, status: :ok
+      render json: photo, status: :ok
     else
       render json: { errors: photo.errors.messages }, status: 422
     end
