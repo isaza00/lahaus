@@ -6224,3 +6224,669 @@ Processing by Api::V1::PropertiesController#index as JSON
 Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 2438)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started DELETE "/api/v1/properties/" for 127.0.0.1 at 2020-10-05 12:23:52 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/properties/" for 127.0.0.1 at 2020-10-05 12:24:00 -0500
+  
+SyntaxError (/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:25: syntax error, unexpected keyword_rescue, expecting keyword_end
+    rescue => e
+    ^~~~~~
+/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:26: syntax error, unexpected '}', expecting =>
+      respond json: {e.message}, status: :404
+                              ^
+/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/properties_controller.rb:25: syntax error, unexpected keyword_rescue, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:26: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/properties_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:25: syntax error, unexpected keyword_rescue, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:26: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/properties_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:24:07 -0500
+  
+SyntaxError (/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:25: syntax error, unexpected keyword_rescue, expecting keyword_end
+    rescue => e
+    ^~~~~~
+/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:26: syntax error, unexpected '}', expecting =>
+      respond json: {e.message}, status: :404
+                              ^
+/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/properties_controller.rb:25: syntax error, unexpected keyword_rescue, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:26: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/properties_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:25: syntax error, unexpected keyword_rescue, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:26: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/properties_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:25:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:27: syntax error, unexpected '}', expecting =>
+      respond json: {e.message}, status: :404
+                              ^):
+  
+app/controllers/api/v1/properties_controller.rb:27: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/properties_controller.rb:27: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:25:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:27: syntax error, unexpected '}', expecting =>
+      respond json: {e.message}, status: 404
+                              ^):
+  
+app/controllers/api/v1/properties_controller.rb:27: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/properties_controller.rb:27: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:26:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.9ms | Allocations: 17387)
+
+
+Started DELETE "/api/v1/properties/6" for 127.0.0.1 at 2020-10-05 12:26:30 -0500
+Processing by Api::V1::PropertiesController#destroy as JSON
+  Parameters: {"property_id"=>"6"}
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[36mProperty Destroy (21.9ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[35m (88.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+Completed 500 Internal Server Error in 283ms (ActiveRecord: 111.3ms | Allocations: 75392)
+
+
+  
+NoMethodError (undefined method `respond' for #<Api::V1::PropertiesController:0x00007f5954127938>):
+  
+app/controllers/api/v1/properties_controller.rb:27:in `rescue in destroy'
+app/controllers/api/v1/properties_controller.rb:18:in `destroy'
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:27:16 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 3.3ms | Allocations: 15724)
+
+
+Started DELETE "/api/v1/properties/5" for 127.0.0.1 at 2020-10-05 12:27:33 -0500
+Processing by Api::V1::PropertiesController#destroy as JSON
+  Parameters: {"property_id"=>"5"}
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[36mProperty Destroy (0.5ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[35m (88.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+Completed 200 OK in 113ms (Views: 0.7ms | ActiveRecord: 89.6ms | Allocations: 3799)
+
+
+Started DELETE "/api/v1/properties/5" for 127.0.0.1 at 2020-10-05 12:28:02 -0500
+Processing by Api::V1::PropertiesController#destroy as JSON
+  Parameters: {"property_id"=>"5"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:20:in `destroy'
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 651)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:32:54 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 1934)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:32:57 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.1ms | Allocations: 1934)
+
+
+Started DELETE "/api/v1/properties/4" for 127.0.0.1 at 2020-10-05 12:33:04 -0500
+Processing by Api::V1::PropertiesController#destroy as JSON
+  Parameters: {"property_id"=>"4"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[36mProperty Destroy (3.4ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[35m (135.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+Completed 200 OK in 146ms (Views: 0.2ms | ActiveRecord: 139.0ms | Allocations: 2986)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:33:24 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1674)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:36:00 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (1.9ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.9ms | Allocations: 1674)
+
+
+Started POST "/api/v1/properties/" for 127.0.0.1 at 2020-10-05 12:37:46 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/properties/" for 127.0.0.1 at 2020-10-05 12:38:10 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users/21/properties/" for 127.0.0.1 at 2020-10-05 12:40:01 -0500
+Processing by Api::V1::PropertiesController#create as JSON
+  Parameters: {"built_type"=>"Casa", "hood"=>"Estadio", "city"=>"Medellin", "user_id"=>"21", "property"=>{"built_type"=>"Casa", "hood"=>"Estadio", "city"=>"Medellin"}}
+[31mUnpermitted parameters: :format, :property[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[36mProperty Create (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Estadio"], ["city", "Medellin"], ["user_id", 21], ["created_at", "2020-10-05 17:40:01.569801"], ["updated_at", "2020-10-05 17:40:01.569801"]]
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[35m (88.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+Completed 200 OK in 147ms (Views: 0.9ms | ActiveRecord: 90.2ms | Allocations: 16447)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:40:08 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 1944)
+
+
+Started POST "/api/v1/users/38/properties/" for 127.0.0.1 at 2020-10-05 12:40:53 -0500
+Processing by Api::V1::PropertiesController#create as JSON
+  Parameters: {"built_type"=>"Apartamento", "hood"=>"Belen", "city"=>"Medellin", "user_id"=>"38", "property"=>{"built_type"=>"Apartamento", "hood"=>"Belen", "city"=>"Medellin"}}
+[31mUnpermitted parameters: :format, :property[0m
+  [1m[35m (3.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[36mProperty Create (6.3ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Apartamento"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 38], ["created_at", "2020-10-05 17:40:53.220721"], ["updated_at", "2020-10-05 17:40:53.220721"]]
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[35m (92.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+Completed 200 OK in 122ms (Views: 1.8ms | ActiveRecord: 102.2ms | Allocations: 5388)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:40:56 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 2209)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:41:24 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2209)
+
+
+Started DELETE "/api/v1/properties/5" for 127.0.0.1 at 2020-10-05 12:41:47 -0500
+Processing by Api::V1::PropertiesController#destroy as JSON
+  Parameters: {"property_id"=>"5"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[36mProperty Destroy (0.8ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+  [1m[35m (150.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:21:in `destroy'
+Completed 200 OK in 173ms (Views: 0.7ms | ActiveRecord: 151.4ms | Allocations: 3741)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:41:51 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 1943)
+
+
+Started POST "/api/v1/users/38/properties/" for 127.0.0.1 at 2020-10-05 12:42:11 -0500
+Processing by Api::V1::PropertiesController#create as JSON
+  Parameters: {"built_type"=>"Apartamento", "hood"=>"Belen", "city"=>"Medellin", "user_id"=>"38", "property"=>{"built_type"=>"Apartamento", "hood"=>"Belen", "city"=>"Medellin"}}
+[31mUnpermitted parameters: :format, :property[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[36mProperty Create (1.2ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Apartamento"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 38], ["created_at", "2020-10-05 17:42:11.346183"], ["updated_at", "2020-10-05 17:42:11.346183"]]
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[35m (86.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+Completed 200 OK in 114ms (Views: 4.4ms | ActiveRecord: 87.9ms | Allocations: 5390)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:42:13 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.2ms | Allocations: 2209)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:42:33 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 2209)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:42:42 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 2209)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-05 12:42:51 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:14:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 2209)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePhotos (20201005184810)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201005184810"]]
+  [1m[35m (105.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhoto (20201005185525)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePhoto (20201005185525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (112.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "built_type" varchar, "price" varchar, "address" varchar, "apt" varchar, "tower" varchar, "hood" varchar, "city" varchar, "private_area" varchar, "estrato" varchar, "beds" integer, "baths" integer, "contact_1" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (125.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (134.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (136.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (117.6ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (125.6ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (99.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (108.9ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (91.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (108.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (97.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200929014510)[0m
+  [1m[35m (106.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200920140300),
+(20200920142212),
+(20200928162141),
+(20200928194359),
+(20200928195320),
+(20200929012706);
+
+[0m
+  [1m[35m (107.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-05 19:00:18.045827"], ["updated_at", "2020-10-05 19:00:18.045827"]]
+  [1m[35m (74.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "11d8c75721e9f7f1cd453e9df6c289f9e7f6d509"], ["created_at", "2020-10-05 19:00:18.195831"], ["updated_at", "2020-10-05 19:00:18.195831"]]
+  [1m[35m (70.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (82.9ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "built_type" varchar, "price" varchar, "address" varchar, "apt" varchar, "tower" varchar, "hood" varchar, "city" varchar, "private_area" varchar, "estrato" varchar, "beds" integer, "baths" integer, "contact_1" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (107.0ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (123.7ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (140.3ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (121.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (127.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (117.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (113.0ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (81.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (125.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (101.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200929014510)[0m
+  [1m[35m (69.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200920140300),
+(20200920142212),
+(20200928162141),
+(20200928194359),
+(20200928195320),
+(20200929012706);
+
+[0m
+  [1m[35m (118.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-05 19:00:19.992386"], ["updated_at", "2020-10-05 19:00:19.992386"]]
+  [1m[35m (71.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-10-05 19:00:20.080970"], ["key", "environment"]]
+  [1m[35m (90.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "11d8c75721e9f7f1cd453e9df6c289f9e7f6d509"], ["created_at", "2020-10-05 19:00:20.180574"], ["updated_at", "2020-10-05 19:00:20.180574"]]
+  [1m[35m (89.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePhoto (20201005185525)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201005185525"]]
+  [1m[35m (131.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/properties/5/photos" for 127.0.0.1 at 2020-10-05 14:19:24 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/properties/5/photos"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/properties/5/photos" for 127.0.0.1 at 2020-10-05 14:20:06 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#index as JSON
+  Parameters: {"property_id"=>"5"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 185)
+
+
+Started GET "/api/v1/properties/5/photos" for 127.0.0.1 at 2020-10-05 14:20:54 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#index as JSON
+  Parameters: {"property_id"=>"5"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:8:in `index'
+Completed 404 Not Found in 8ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 5375)
+
+
+Started GET "/api/v1/properties/4/photos" for 127.0.0.1 at 2020-10-05 14:21:07 -0500
+Processing by Api::V1::PhotosController#index as JSON
+  Parameters: {"property_id"=>"4"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:8:in `index'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 665)
+
+
+Started GET "/api/v1/properties/3/photos" for 127.0.0.1 at 2020-10-05 14:21:11 -0500
+Processing by Api::V1::PhotosController#index as JSON
+  Parameters: {"property_id"=>"3"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:8:in `index'
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 651)
+
+
+Started POST "/api/v1/users/38/properties/" for 127.0.0.1 at 2020-10-05 14:21:47 -0500
+Processing by Api::V1::PropertiesController#create as JSON
+  Parameters: {"built_type"=>"Apartamento", "hood"=>"Belen", "city"=>"Medellin", "user_id"=>"38", "property"=>{"built_type"=>"Apartamento", "hood"=>"Belen", "city"=>"Medellin"}}
+[31mUnpermitted parameters: :format, :property[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:36:in `create'
+Completed 422 Unprocessable Entity in 46ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 21344)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ejemplo1@mail.com"], ["password_digest", "$2a$12$ulJWHySqRtHl1T4ff2h2O.vdRYp8nHKgby5BQOwyECVqTZ8ptnkL."], ["created_at", "2020-10-05 19:26:26.181529"], ["updated_at", "2020-10-05 19:26:26.181529"]]
+  [1m[35m (144.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$12$8mNpvzxUi9gZdSfPall5MOggRQThk.wHcY5rP3RtKySwtvPn/J18S"], ["created_at", "2020-10-05 19:26:26.586698"], ["updated_at", "2020-10-05 19:26:26.586698"]]
+  [1m[35m (153.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo3@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ejemplo3@mail.com"], ["password_digest", "$2a$12$R4ScG.TaGfchJFfRnwh.q.6SYR4yjccVGhkjWwydkN.yR4vaSPEXe"], ["created_at", "2020-10-05 19:26:53.701287"], ["updated_at", "2020-10-05 19:26:53.701287"]]
+  [1m[35m (139.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo4@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ejemplo4@mail.com"], ["password_digest", "$2a$12$R/k0Vk/OzG02yp6ZsVbLiORys1p9P.Y3cj7VoK.MckUN8d7LDQKBO"], ["created_at", "2020-10-05 19:26:54.107871"], ["updated_at", "2020-10-05 19:26:54.107871"]]
+  [1m[35m (134.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo5@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ejemplo5@mail.com"], ["password_digest", "$2a$12$S28/ohSHbjfrMY0n2ftql.mUkuSy85k2fKwg8jKDfuqyIaInSrBH2"], ["created_at", "2020-10-05 19:26:54.531123"], ["updated_at", "2020-10-05 19:26:54.531123"]]
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.4ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 1], ["created_at", "2020-10-05 19:26:54.669853"], ["updated_at", "2020-10-05 19:26:54.669853"]]
+  [1m[35m (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProperty Create (6.0ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Apartamento"], ["hood", "Poblado"], ["city", "Medellin"], ["user_id", 2], ["created_at", "2020-10-05 19:26:54.812535"], ["updated_at", "2020-10-05 19:26:54.812535"]]
+  [1m[35m (86.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.7ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Laureles"], ["city", "Medellin"], ["user_id", 3], ["created_at", "2020-10-05 19:26:54.918992"], ["updated_at", "2020-10-05 19:26:54.918992"]]
+  [1m[35m (103.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.0ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Apartamento"], ["hood", "La America"], ["city", "Medellin"], ["user_id", 4], ["created_at", "2020-10-05 19:26:55.043926"], ["updated_at", "2020-10-05 19:26:55.043926"]]
+  [1m[35m (100.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.7ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 5], ["created_at", "2020-10-05 19:26:55.175829"], ["updated_at", "2020-10-05 19:26:55.175829"]]
+  [1m[35m (113.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/api/v1/properties/3/photos" for 127.0.0.1 at 2020-10-05 14:27:34 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#index as JSON
+  Parameters: {"property_id"=>"3"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:8:in `index'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."property_id" = ?[0m  [["property_id", 3]]
+  ↳ app/controllers/api/v1/photos_controller.rb:10:in `index'
+Completed 200 OK in 57ms (Views: 2.7ms | ActiveRecord: 1.0ms | Allocations: 17935)
+
+

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       end
 
       get 'properties' => 'properties#index', as: :properties
+      delete '/properties/:property_id', to: 'properties#destroy'
+
+      get '/properties/:property_id/photos', to: 'photos#index'
 
     end
   end

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_014510) do
+ActiveRecord::Schema.define(version: 2020_10_05_185525) do
+
+  create_table "photos", force: :cascade do |t|
+    t.string "url"
+    t.integer "property_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["property_id"], name: "index_photos_on_property_id"
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "project"
@@ -44,5 +52,6 @@ ActiveRecord::Schema.define(version: 2020_09_29_014510) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "photos", "properties"
   add_foreign_key "properties", "users"
 end

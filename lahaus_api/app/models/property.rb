@@ -1,5 +1,6 @@
 class Property < ApplicationRecord
   belongs_to :user
+  has_many :photos
   validates :user_id, presence: true  
   validates :built_type, inclusion: { in: %w(Casa Apartamento Apartaestudio Lote Penthouse Loft Duplex Casafinca)}
   validates :city, length: { maximum: 255 }
