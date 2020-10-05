@@ -16,7 +16,7 @@ class Api::V1::PhotosController < ApplicationController
   # SHOW PHOTO BY ID /api/v1/properties/<property_id>/<photo_id>
   def show
     property = property.find(params[:property_id])
-    photos = property.photos
+    photos = property.photo_id
     render json: {photos: photos}
   end
 
