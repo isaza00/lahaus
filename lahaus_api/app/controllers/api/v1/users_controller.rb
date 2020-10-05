@@ -1,6 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :authorized, only: [:auto_login,
-                                    :show]
+  before_action :authorized, only: [:auto_login]
 
   # SHOW USER BY ID api/v1/users/<id>
   def show

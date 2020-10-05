@@ -37,16 +37,25 @@ class Api::V1::PhotosController < ApplicationController
     end
   end
 
-  #POST /api/v1/properties/<property_id>/<photo_id>
+  #POST /api/v1/properties/<property_id>
   def create
-    property = Property.find(params[:property_id])
-    photo = Photo.new(photo_params)
-    photo.user_id = photo_id
-    if photo.save
-      render json: photo, status: :ok
-    else
-      render json: { errors: photo.errors.messages }, status: 422
+    begin
+      property = Property.find(params[:property_id])
+      photo = Photo.new(photo_params)
+      if photo.save
+        render json: photo, status: :ok
+      else
+        render json: { errors: photo.errors.messages }, status: 422
+      end
+    rescue => e
+      render json: { errors: e.message }, status: 404
     end
+  end
+
+  private
+
+  def photo_params
+    params.permit(:url, :property_id)
   end
 
 end

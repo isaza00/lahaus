@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       get '/properties/:property_id/photos', to: 'photos#index'
       get '/photos/photo_id', to: 'photos#show'
       delete '/photos/photo_id', to: 'photos#destroy'
-      post '/properties/:property_id/photo_id', to: "photos#create"
+      post '/properties/:property_id/photos', to: "photos#create"
 
 
     end
