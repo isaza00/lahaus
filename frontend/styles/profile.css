@@ -8,8 +8,8 @@ table, th, td {
     background-color: lightgrey;
   }
 th {
-    background-color: darkslategrey;
-    color: floralwhite;
+    background-color: white;
+    color: black;
     padding-right: 0px;
 }
 table {
