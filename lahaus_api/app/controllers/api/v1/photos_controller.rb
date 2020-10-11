@@ -1,32 +1,37 @@
 class Api::V1::PhotosController < ApplicationController
 
-  before_action :authorized, only: []
+  before_action :authorized, only: [:show, :create, :index, :update, :destroy]
+  before_action :correct_user, only: [:show, :create, :index, :update, :destroy]
 
-  #GET /api/v1/properties/<property_id>/photos
+  #GET /api/v1/users/:id/properties/:property_id/photos
   def index
     begin
       property = Property.find(params[:property_id])
       photos = property.photos
-      render json: {photos: photos}, status: :ok
+      render json: { photos: photos }, status: :ok
     rescue => e
-      render json: {errors: e.message}, status: 404
+      render json: { errors: e.message }, status: 404
     end
   end
 
-  # SHOW PHOTO BY ID /api/v1/photos/<photo_id>
+  # GET /api/v1/users/:id/properties/:property_id/photos/<photo_id>
   def show
     begin
-      photo = Property.find(params[:photo_id])
-      render json: {photo: photo}, status: :ok
+      photo = Photo.find(params[:photo_id])
+      render json: { photo: photo }, status: :ok
     rescue => e
       render json: { errors: e.message}, status: 404
     end
   end
 
-  # DELETE BY ID /api/v1/photos/<photo_id>
+  # PUT /api/v1/users/:id/properties/:property_id/photos/:photo_id
+  def update
+  end
+
+  # DELETE /api/v1/users/:id/properties/:property_id/photos/:photo_id
   def destroy
     begin
-      photo = Property.find(params[:photo_id])
+      photo = Photo.find(params[:photo_id])
       if photo.destroy
         render json: {}, status: :ok
       else
@@ -37,9 +42,10 @@ class Api::V1::PhotosController < ApplicationController
     end
   end
 
-  #POST /api/v1/properties/<property_id>
+  #POST /api/v1/users/:id/properties/:property_id/photos
   def create
     begin
+      user = User.find(params[:user_id])
       property = Property.find(params[:property_id])
       photo = Photo.new(photo_params)
       if photo.save
@@ -55,7 +61,7 @@ class Api::V1::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.permit(:url, :property_id)
+    params.permit(:url, :property_id, :accepted)
   end
 
 end

@@ -1,7 +1,7 @@
 class Property < ApplicationRecord
   belongs_to :user
   has_many :photos
-  validates :user_id, presence: true  
+  validates :user_id, presence: true
   validates :built_type, inclusion: { in: %w(Casa Apartamento Apartaestudio Lote Penthouse Loft Duplex Casafinca)}
   validates :city, length: { maximum: 255 }
 =begin
@@ -11,7 +11,7 @@ class Property < ApplicationRecord
   validates :apt, length: { maximum: 5 }
   validates :tower, length: { maximum: 20 }
   validates :hood, length: { maximum: 255 }
-  
+
   validates :private_area, length: { maximum: 255 }
   validates :estrato, inclusion: { in: %w(1 2 3 4 5 6 Industrial) }
   validates :beds, length: { maximum: 3 }

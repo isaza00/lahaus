@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_185525) do
+ActiveRecord::Schema.define(version: 2020_10_11_143722) do
 
   create_table "photos", force: :cascade do |t|
     t.string "url"
     t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "accepted", default: false
     t.index ["property_id"], name: "index_photos_on_property_id"
   end
 
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_185525) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "isadmin", default: false
     t.index ["email"], name: "index_users_on_email"
   end
 
