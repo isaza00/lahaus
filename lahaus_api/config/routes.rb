@@ -4,21 +4,19 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       post "/login", to: "users#login"
-      get "/auto_login", to: "users#auto_login"
+      post "/signup", to: "users#signup"
 
-      resources :users do
-        resources :properties
+      resources :users, param: :user_id do
+        member do
+          resources :properties, param: :property_id do
+            member do
+              resources :photos, param: :photo_id
+            end
+          end
+        end
       end
-
-      get 'properties' => 'properties#index', as: :properties
-      delete '/properties/:property_id', to: 'properties#destroy'
-
-      get '/properties/:property_id/photos', to: 'photos#index'
-      get '/photos/photo_id', to: 'photos#show'
-      delete '/photos/photo_id', to: 'photos#destroy'
-      post '/properties/:property_id/photos', to: "photos#create"
-
 
     end
   end
+
 end

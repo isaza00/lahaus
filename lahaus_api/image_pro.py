@@ -57,4 +57,3 @@ for link in url:
         focus()
 print("ilumination:", ilum)
 print("focus", foc)
-
