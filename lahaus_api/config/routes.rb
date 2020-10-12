@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       post "/login", to: "users#login"
-      post "/signup", to: "users#signup"
+      post "/signup", to: "users#create"
 
       resources :users, param: :user_id do
         member do
