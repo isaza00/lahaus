@@ -47,7 +47,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  #POST api/v1/users/signup
+  #POST api/v1/signup
   def create
     user = User.new(user_params)
     if user.save
@@ -58,7 +58,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  #POST api/v1/users/login
+  #POST api/v1/login
   def login
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
@@ -72,7 +72,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:email, :password)
+    params.permit(:email, :password, :full_name, :cellphone)
   end
 
 end
