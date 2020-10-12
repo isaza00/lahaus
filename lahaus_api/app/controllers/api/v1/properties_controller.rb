@@ -40,12 +40,24 @@ class Api::V1::PropertiesController < ApplicationController
     end
   end
 
+  # UPDATE PROPERTY PUT api/v1/properties/<property_id>
+  def update
+    property = Property.find(params[:id])
+    if property.update(propety_params)
+      render json: property, status: :ok
+    else
+      render json: { errors: property.errors }, status: 422
+    end
+  end
+
   private
 
   def property_params
-    params.permit(:project, :built_type, :price, :address, :apt,
-                  :tower, :hood, :city, :private_area,
-                  :estrato, :beds, :baths, :contact_1, :user_id)
+    params.permit(:built_type, :city, :price, :address, :admon, :build_area,
+                  :private_area, :social_class, :state, :elevator, :common_areas,
+                  :property_tax, :rooms, :bathrooms, :half_bathrooms, :parking_lot,
+                  :utility_room, :empty_property, :inhabitants, :rent, :morgage,
+                  :user_id)
   end
 
 end
