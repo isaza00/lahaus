@@ -22,4 +22,21 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :unauthorized
     assert_equal '{"errors":"Invalid username or password"}', @response.body
   end
+
+  test "unauthorized for non admin user for index users" do
+    post "/api/v1/login", params: { email: "email1@email.com", password: "1234" }
+    token = JSON.parse(@response.body)["token"]
+    get "/api/v1/users", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{token}" }
+    assert_response :unauthorized
+    assert_equal '{"message":"Unauthorized"}', @response.body
+  end
+
+  test "authorized for admin user for index users" do
+    post "/api/v1/login", params: { email: "admin@admin.com", password: "admin1234" }
+    token = JSON.parse(@response.body)["token"]
+    get "/api/v1/users", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{token}" }
+    assert_response :ok
+    assert_equal JSON.parse(@response.body)["users"].length, User.all.length
+  end
+
 end

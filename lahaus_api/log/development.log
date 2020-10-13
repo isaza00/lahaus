@@ -9813,3 +9813,1298 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo3@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo4@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo5@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos"[0m
+  [1m[35m (91.0ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted" boolean DEFAULT 0)[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (97.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "built_type" varchar, "price" varchar, "address" varchar, "apt" varchar, "hood" varchar, "city" varchar, "private_area" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar, "build_area" varchar, "social_class" varchar, "state" varchar, "elevator" boolean, "common_areas" varchar, "property_tax" varchar, "rooms" varchar, "bathrooms" varchar, "half_bathrooms" varchar, "parking_lot" varchar, "utility_room" boolean, "empty_property" boolean, "inhabitants" boolean, "rent" varchar, "mortgage" varchar)[0m
+  [1m[35m (95.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (105.6ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (89.0ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (94.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (112.0ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (102.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "isadmin" boolean DEFAULT 0, "full_name" varchar, "cellphone" varchar)[0m
+  [1m[35m (92.0ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphotos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aphotos_on_property_id" ON "aphotos" ("property_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphotos" ("id","url","property_id","created_at","updated_at","accepted")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted" FROM "photos"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "photos"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted" boolean DEFAULT 0, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "photos" ("id","url","property_id","created_at","updated_at","accepted")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted" FROM "aphotos"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aphotos"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (93.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (96.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (106.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (76.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201013005654)[0m
+  [1m[35m (78.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200920140300),
+(20200920142212),
+(20200928162141),
+(20200928194359),
+(20200928195320),
+(20200929012706),
+(20200929014510),
+(20201005185525),
+(20201011142729),
+(20201011143722),
+(20201013003510);
+
+[0m
+  [1m[35m (97.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (5.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-13 13:03:01.248606"], ["updated_at", "2020-10-13 13:03:01.248606"]]
+  [1m[35m (72.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "b070afd6582e7d71893918d10e4e23953a964fb8"], ["created_at", "2020-10-13 13:03:01.362231"], ["updated_at", "2020-10-13 13:03:01.362231"]]
+  [1m[35m (72.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos"[0m
+  [1m[35m (100.9ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted" boolean DEFAULT 0)[0m
+  [1m[35m (119.9ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (97.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "built_type" varchar, "price" varchar, "address" varchar, "apt" varchar, "hood" varchar, "city" varchar, "private_area" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar, "build_area" varchar, "social_class" varchar, "state" varchar, "elevator" boolean, "common_areas" varchar, "property_tax" varchar, "rooms" varchar, "bathrooms" varchar, "half_bathrooms" varchar, "parking_lot" varchar, "utility_room" boolean, "empty_property" boolean, "inhabitants" boolean, "rent" varchar, "mortgage" varchar)[0m
+  [1m[35m (97.7ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (98.7ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (101.6ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (98.5ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (110.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (105.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "isadmin" boolean DEFAULT 0, "full_name" varchar, "cellphone" varchar)[0m
+  [1m[35m (117.4ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphotos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted" boolean DEFAULT 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aphotos_on_property_id" ON "aphotos" ("property_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphotos" ("id","url","property_id","created_at","updated_at","accepted")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted" FROM "photos"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "photos"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted" boolean DEFAULT 0, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "photos" ("id","url","property_id","created_at","updated_at","accepted")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted" FROM "aphotos"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aphotos"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (73.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (126.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (103.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (73.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201013005654)[0m
+  [1m[35m (71.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200920140300),
+(20200920142212),
+(20200928162141),
+(20200928194359),
+(20200928195320),
+(20200929012706),
+(20200929014510),
+(20201005185525),
+(20201011142729),
+(20201011143722),
+(20201013003510);
+
+[0m
+  [1m[35m (108.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-13 13:03:03.335092"], ["updated_at", "2020-10-13 13:03:03.335092"]]
+  [1m[35m (89.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-10-13 13:03:03.450169"], ["key", "environment"]]
+  [1m[35m (74.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "b070afd6582e7d71893918d10e4e23953a964fb8"], ["created_at", "2020-10-13 13:03:03.548847"], ["updated_at", "2020-10-13 13:03:03.548847"]]
+  [1m[35m (84.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo3@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo4@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo5@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo3@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo4@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo5@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (76.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (104.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200920140300)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200920140300"]]
+  [1m[35m (101.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsers (20200920142212)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200920142212"]]
+  [1m[35m (110.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProperties (20200928162141)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "type" varchar, "price" integer, "address" varchar, "apt" varchar, "tower" varchar, "hood" varchar, "city" varchar, "private_area" float, "estrato" integer, "beds" integer, "baths" integer, "contact_1" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200928162141"]]
+  [1m[35m (100.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeDataTypeForPrice (20200928194359)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" float DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" float DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200928194359"]]
+  [1m[35m (81.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeDataTypeForPrivateArea (20200928195320)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" float DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200928195320"]]
+  [1m[35m (69.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeVariableTypeFromProperties (20200929012706)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_properties_on_type"[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929012706"]]
+  [1m[35m (94.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeIndexForUserIdInProperties (20200929014510)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP INDEX "index_properties_on_user_id"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929014510"]]
+  [1m[35m (76.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhoto (20201005185525)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201005185525"]]
+  [1m[35m (98.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIsadminToUsers (20201011142729)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "users" ADD "isadmin" boolean DEFAULT 0[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201011142729"]]
+  [1m[35m (57.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAcceptedToUsers (20201011143722)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.0ms)[0m  [1m[35mALTER TABLE "photos" ADD "accepted" boolean DEFAULT 0[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201011143722"]]
+  [1m[35m (49.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnToProperties (20201013003510)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "properties" ADD "admon" varchar[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "properties" ADD "build_area" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "properties" ADD "social_class" varchar[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "properties" ADD "state" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "properties" ADD "elevator" boolean[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "properties" ADD "common_areas" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "property_tax" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "rooms" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "bathrooms" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "half_bathrooms" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "parking_lot" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "utility_room" boolean[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "properties" ADD "empty_property" boolean[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "inhabitants" boolean[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "rent" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "mortgage" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201013003510"]]
+  [1m[35m (111.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnToUsers (20201013005654)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "cellphone" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201013005654"]]
+  [1m[35m (62.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-13 13:05:08.992503"], ["updated_at", "2020-10-13 13:05:08.992503"]]
+  [1m[35m (73.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo1@mail.com"], ["password_digest", "$2a$12$xnDH83sfV4AakpqxcdtJqeiVXZAgv2nlfM0EF1g87rXIIGvsc6Gva"], ["created_at", "2020-10-13 13:10:41.875340"], ["updated_at", "2020-10-13 13:10:41.875340"], ["full_name", "juan"], ["cellphone", "3001234567"]]
+  [1m[35m (86.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$12$GpG.UfqPqhYFyDa9k1tVTuV08w4Vw8iLTZeEWafCrIP95CkaLZ0ai"], ["created_at", "2020-10-13 13:10:42.236641"], ["updated_at", "2020-10-13 13:10:42.236641"], ["full_name", "pedro"], ["cellphone", "3001234567"]]
+  [1m[35m (100.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo3@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo3@mail.com"], ["password_digest", "$2a$12$PsNYliAltlEKHJDaX9HqUeBqs13dDfE7lupTxJosHPw4moEjOadIq"], ["created_at", "2020-10-13 13:10:42.609168"], ["updated_at", "2020-10-13 13:10:42.609168"], ["full_name", "lucas"], ["cellphone", "3001234567"]]
+  [1m[35m (108.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo4@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo4@mail.com"], ["password_digest", "$2a$12$o0HRLntFlxgTySTxN2nKde/7DHATZAXonhvYXPbTC3/LbGLrf3obG"], ["created_at", "2020-10-13 13:10:42.989724"], ["updated_at", "2020-10-13 13:10:42.989724"], ["full_name", "mateo"], ["cellphone", "3001234567"]]
+  [1m[35m (113.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo5@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo5@mail.com"], ["password_digest", "$2a$12$rBRYkK3bYT2uphvTboXS2Os7Ddw7G4hHo/CS/RsZJ4kC1KOjPovuG"], ["created_at", "2020-10-13 13:10:43.376579"], ["updated_at", "2020-10-13 13:10:43.376579"], ["full_name", "judas"], ["cellphone", "3001234567"]]
+  [1m[35m (118.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "isadmin", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin@mail.com"], ["password_digest", "$2a$12$T.NQ8k9MgbQj9LwKcA9TzOWlTLPh5nqcNp4K/.EpKeCw7yX4CQp.W"], ["created_at", "2020-10-13 13:10:43.775777"], ["updated_at", "2020-10-13 13:10:43.775777"], ["isadmin", 1], ["full_name", "admin"], ["cellphone", "3001234567"]]
+  [1m[35m (96.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProperty Load (1.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (90.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (95.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200920140300)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200920140300"]]
+  [1m[35m (86.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsers (20200920142212)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200920142212"]]
+  [1m[35m (96.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProperties (20200928162141)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "type" varchar, "price" integer, "address" varchar, "apt" varchar, "tower" varchar, "hood" varchar, "city" varchar, "private_area" float, "estrato" integer, "beds" integer, "baths" integer, "contact_1" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200928162141"]]
+  [1m[35m (100.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeDataTypeForPrice (20200928194359)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" float DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" float DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200928194359"]]
+  [1m[35m (74.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeDataTypeForPrivateArea (20200928195320)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" float DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" integer DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200928195320"]]
+  [1m[35m (67.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeVariableTypeFromProperties (20200929012706)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_properties_on_type"[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929012706"]]
+  [1m[35m (90.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeIndexForUserIdInProperties (20200929014510)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP INDEX "index_properties_on_user_id"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200929014510"]]
+  [1m[35m (74.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhoto (20201005185525)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201005185525"]]
+  [1m[35m (100.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIsadminToUsers (20201011142729)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "isadmin" boolean DEFAULT 0[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201011142729"]]
+  [1m[35m (55.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAcceptedToUsers (20201011143722)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "photos" ADD "accepted" boolean DEFAULT 0[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201011143722"]]
+  [1m[35m (49.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnToProperties (20201013003510)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "properties" ADD "admon" varchar[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "properties" ADD "build_area" varchar[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "social_class" varchar[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "state" varchar[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "properties" ADD "elevator" boolean[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "properties" ADD "common_areas" varchar[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "properties" ADD "property_tax" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "properties" ADD "rooms" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "properties" ADD "bathrooms" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "half_bathrooms" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "parking_lot" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "utility_room" boolean[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "empty_property" boolean[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "inhabitants" boolean[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "rent" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "mortgage" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "estrato" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","estrato","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "tower" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","tower","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "beds" integer DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","beds","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "baths" integer DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","baths","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "contact_1" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","contact_1","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201013003510"]]
+  [1m[35m (119.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnToUsers (20201013005654)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" varchar[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "cellphone" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201013005654"]]
+  [1m[35m (74.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-13 13:15:15.631222"], ["updated_at", "2020-10-13 13:15:15.631222"]]
+  [1m[35m (82.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo1@mail.com"], ["password_digest", "$2a$12$khHK5GcU.dSeQBvRAGnhselW0TWAbvCxQr2EY1DLxBW9uC2/n7T7O"], ["created_at", "2020-10-13 13:15:23.439121"], ["updated_at", "2020-10-13 13:15:23.439121"], ["full_name", "juan"], ["cellphone", "3001234567"]]
+  [1m[35m (83.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$12$vzYPH0Nq/DzZzFAtL1BWqOjzkq.wbjQ7y/1pJABMTyp8Dz1IypY2y"], ["created_at", "2020-10-13 13:15:23.766937"], ["updated_at", "2020-10-13 13:15:23.766937"], ["full_name", "pedro"], ["cellphone", "3001234567"]]
+  [1m[35m (65.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo3@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo3@mail.com"], ["password_digest", "$2a$12$sd0ljm/hdyxIW0KUo8spDOHupNTDGYhWvHwmVsXJyt78xUcVzXRR6"], ["created_at", "2020-10-13 13:15:24.102712"], ["updated_at", "2020-10-13 13:15:24.102712"], ["full_name", "lucas"], ["cellphone", "3001234567"]]
+  [1m[35m (61.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo4@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo4@mail.com"], ["password_digest", "$2a$12$t9jANFnuCnAkCq.AgkxHpeB.nRH8mi2A04yYE2.XbcB2pxKT4XTsS"], ["created_at", "2020-10-13 13:15:24.424638"], ["updated_at", "2020-10-13 13:15:24.424638"], ["full_name", "mateo"], ["cellphone", "3001234567"]]
+  [1m[35m (60.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo5@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo5@mail.com"], ["password_digest", "$2a$12$cZxpGbvDRp.eBPxHohCIiehW5dLw/xQ.ltmCkwv.fMwWJVRv8pS0G"], ["created_at", "2020-10-13 13:15:24.733540"], ["updated_at", "2020-10-13 13:15:24.733540"], ["full_name", "judas"], ["cellphone", "3001234567"]]
+  [1m[35m (80.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "isadmin", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin@mail.com"], ["password_digest", "$2a$12$giqAtcHBVnIr/niPwEK3LOFtU5hPOfZMzsbQQ1/dvmPw9DmB094uG"], ["created_at", "2020-10-13 13:15:25.086501"], ["updated_at", "2020-10-13 13:15:25.086501"], ["isadmin", 1], ["full_name", "admin"], ["cellphone", "3001234567"]]
+  [1m[35m (69.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.0ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 1], ["created_at", "2020-10-13 13:15:25.223700"], ["updated_at", "2020-10-13 13:15:25.223700"]]
+  [1m[35m (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProperty Create (2.4ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Apartamento"], ["hood", "Poblado"], ["city", "Medellin"], ["user_id", 2], ["created_at", "2020-10-13 13:15:25.306682"], ["updated_at", "2020-10-13 13:15:25.306682"]]
+  [1m[35m (70.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.6ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Laureles"], ["city", "Medellin"], ["user_id", 3], ["created_at", "2020-10-13 13:15:25.404118"], ["updated_at", "2020-10-13 13:15:25.404118"]]
+  [1m[35m (76.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.6ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Apartamento"], ["hood", "La America"], ["city", "Medellin"], ["user_id", 4], ["created_at", "2020-10-13 13:15:25.504365"], ["updated_at", "2020-10-13 13:15:25.504365"]]
+  [1m[35m (74.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProperty Create (2.8ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 5], ["created_at", "2020-10-13 13:15:25.601794"], ["updated_at", "2020-10-13 13:15:25.601794"]]
+  [1m[35m (86.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at", "accepted") VALUES (?, ?, ?, ?, ?)[0m  [["url", "http://url.com"], ["property_id", 1], ["created_at", "2020-10-13 13:15:25.733933"], ["updated_at", "2020-10-13 13:15:25.733933"], ["accepted", 1]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.2ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "http://url.com"], ["property_id", 1], ["created_at", "2020-10-13 13:15:25.844924"], ["updated_at", "2020-10-13 13:15:25.844924"]]
+  [1m[35m (108.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at", "accepted") VALUES (?, ?, ?, ?, ?)[0m  [["url", "http://url.com"], ["property_id", 2], ["created_at", "2020-10-13 13:15:25.967853"], ["updated_at", "2020-10-13 13:15:25.967853"], ["accepted", 1]]
+  [1m[35m (90.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.8ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at", "accepted") VALUES (?, ?, ?, ?, ?)[0m  [["url", "http://url.com"], ["property_id", 3], ["created_at", "2020-10-13 13:15:26.079131"], ["updated_at", "2020-10-13 13:15:26.079131"], ["accepted", 1]]
+  [1m[35m (97.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.4ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at", "accepted") VALUES (?, ?, ?, ?, ?)[0m  [["url", "http://url.com"], ["property_id", 4], ["created_at", "2020-10-13 13:15:26.205639"], ["updated_at", "2020-10-13 13:15:26.205639"], ["accepted", 1]]
+  [1m[35m (90.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProperty Load (1.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-13 09:49:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#index as JSON
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 224)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 09:52:32 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 288ms (Views: 0.8ms | ActiveRecord: 1.7ms | Allocations: 7600)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-13 09:53:56 -0500
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.3ms | Allocations: 2082)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:38:in `correct_user'
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-13 09:57:04 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 10702)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 10:08:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 28.2ms | Allocations: 206)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 914)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 10:08:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'

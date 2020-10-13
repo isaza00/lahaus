@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   before_action :authorized, only: [:show, :index, :update, :destroy]
-  before_action :correct_user, only: [:show, :index, :update, :destroy]
+  before_action :correct_user, only: [:show, :update, :destroy]
   before_action :isadmin?, only: [:index]
 
   # SHOW USER BY ID api/v1/users/<id>
