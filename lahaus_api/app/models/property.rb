@@ -11,16 +11,16 @@ class Property < ApplicationRecord
   validates :private_area, length: { maximum: 255 }
   validates :social_class, inclusion: { in: %w(1 2 3 4 5 6 Industrial) }
   validates :state, lenght: { maximum: 255 }
-  validates :elevator, inclusion: { in: %w(true false) }
+  validates :elevator, inclusion: { in: [true, false] }
   validates :common_areas, lenght: { maximum: 255 }
   validates :property_tax, lenght: { minimum: 6, maximum: 12 }
   validates :rooms, lenght: { maximum: 3 }
   validates :bathrooms, lenght: { maximum: 2 }
   validates :half_bathrooms, lenght: { maximum: 2 }
   validates :parking_lot, lenght: { maximum: 2 }
-  validates :utility_room, inclusion: { in: %w(true false) }
-  validates :empty_property, inclusion: { in: %w(true false) }
-  validates :inhabitants, inclusion: { in: %w(true false) }
+  validates :utility_room, inclusion: { in: [true, false] }
+  validates :empty_property, inclusion: { in: [true, false] }
+  validates :inhabitants, inclusion: { in: [true, false] }
   validates :rent, lenght:  { maximum: 8 }
   validates :morgage, lenght:  { maximum: 8 }
 
