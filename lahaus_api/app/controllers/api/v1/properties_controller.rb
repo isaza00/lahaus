@@ -2,17 +2,20 @@ class Api::V1::PropertiesController < ApplicationController
 
   before_action :authorized, only: [:show, :create, :index, :update, :destroy]
   before_action :correct_user, only: [:show, :create, :index, :update, :destroy]
-  before_action :isadmin?, only: [:index]
 
   #GET /api/v1/users/<id>/properties/
   def index
-    if params[:user_id]
+    begin
       user = User.find(params[:user_id])
-      properties = user.properties
-    else
-      properties = Property.all
+      if user.isadmin
+        properties = Property.all
+      else
+        properties = user.properties
+      end
+      render json: { properties: properties }, status: :ok
+    rescue => e
+      render json: { error: e.message }, status: 404
     end
-    render json: { properties: properties }, status: :ok
   end
 
   #GET /api/v1/users/:user_id/properties/:property_id

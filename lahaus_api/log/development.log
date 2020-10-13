@@ -11705,3 +11705,1867 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:31:26 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 288ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1002)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-13 13:31:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 13:32:14 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:32:17 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 250ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 7693)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-13 13:32:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 13:33:28 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:33:31 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 272ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 7697)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-13 13:33:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 13:38:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:39:05 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 261ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 978)
+
+
+Started GET "/api/v1/users/null/properties" for 127.0.0.1 at 2020-10-13 13:39:05 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"null"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.4ms | Allocations: 2721)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=null):
+  
+app/controllers/application_controller.rb:38:in `correct_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 13:42:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:42:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 293ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 994)
+
+
+Started GET "/api/v1/users/null/properties" for 127.0.0.1 at 2020-10-13 13:42:38 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"null"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.3ms | Allocations: 2339)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=null):
+  
+app/controllers/application_controller.rb:38:in `correct_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 13:43:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:43:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 270ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 978)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 13:43:48 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:10:in `index'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 51ms (Views: 9.5ms | ActiveRecord: 1.0ms | Allocations: 14068)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 13:44:35 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:10:in `index'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 4600)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 13:44:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:44:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 258ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 978)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 13:44:47 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:10:in `index'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 4606)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:49:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 249ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 6809)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 13:49:17 -0500
+  
+SyntaxError (/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:15: syntax error, unexpected keyword_else, expecting keyword_end
+    else
+    ^~~~
+/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:84: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/properties_controller.rb:15: syntax error, unexpected keyword_else, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:84: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:15: syntax error, unexpected keyword_else, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:84: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2020-10-13 13:49:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.1ms | Allocations: 206)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 1256)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 13:49:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:50:05 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 269ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 6632)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 13:50:06 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:10:in `index'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:19:in `index'
+Completed 200 OK in 41ms (Views: 30.3ms | ActiveRecord: 1.2ms | Allocations: 30387)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:04:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 266ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1001)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:04:11 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:10:in `index'
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:19:in `index'
+Completed 200 OK in 12ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 6372)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:12:25 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/norman/lahaus/lahaus_api/app/controllers/api/v1/properties_controller.rb:86: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/properties_controller.rb:86: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/properties_controller.rb:86: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:13:33 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:10:in `index'
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:16:in `index'
+Completed 200 OK in 81ms (Views: 49.0ms | ActiveRecord: 3.7ms | Allocations: 38084)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:14:03 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:10:in `index'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:16:in `index'
+Completed 200 OK in 25ms (Views: 6.3ms | ActiveRecord: 0.7ms | Allocations: 6286)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:14:23 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 262ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 1185)
+
+
+Started GET "/profile.html?userId=1&token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.JC6qKuH9SG0SIiYSfhZUFTtirxN9Q47buLk0DPFFFzE" for 127.0.0.1 at 2020-10-13 14:14:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/profile.html"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/profile.html?userId=1&token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.JC6qKuH9SG0SIiYSfhZUFTtirxN9Q47buLk0DPFFFzE" for 127.0.0.1 at 2020-10-13 14:16:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/profile.html"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:16:10 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 249ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 979)
+
+
+Started GET "/profile.html?userId=1&token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.JC6qKuH9SG0SIiYSfhZUFTtirxN9Q47buLk0DPFFFzE" for 127.0.0.1 at 2020-10-13 14:16:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/profile.html"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 14:16:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:16:33 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 274ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 978)
+
+
+Started GET "/api/v1/users/1/properties" for 127.0.0.1 at 2020-10-13 14:16:33 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 3225)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 14:19:33 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:19:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 274ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 6633)
+
+
+Started GET "/api/v1/users/1/properties" for 127.0.0.1 at 2020-10-13 14:19:47 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 56ms (Views: 43.5ms | ActiveRecord: 2.7ms | Allocations: 28242)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:22:02 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 258ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 981)
+
+
+Started GET "/api/v1/users/1/properties" for 127.0.0.1 at 2020-10-13 14:22:02 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 26ms (Views: 6.7ms | ActiveRecord: 0.6ms | Allocations: 4122)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:22:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo2@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 254ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 980)
+
+
+Started GET "/api/v1/users/2/properties" for 127.0.0.1 at 2020-10-13 14:22:12 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 2.6ms | Allocations: 4122)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:22:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 250ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 980)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:22:27 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.8ms | Allocations: 5516)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:24:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 274ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 979)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 14:24:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:24:56 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 286ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 982)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:25:03 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 261ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 980)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:25:07 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 261ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:25:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 261ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 980)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:26:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 277ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:27:21 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 255ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 980)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 14:28:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:23 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 251ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 978)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:25 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 271ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 980)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 256ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 980)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 293ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 983)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:32 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 257ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 983)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:32 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 257ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 982)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:33 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:33 -0500
+Completed 200 OK in 265ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1257)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 265ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1050)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:33 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 252ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1027)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:33 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:34 -0500
+Completed 200 OK in 271ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1314)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:34 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 509ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1473)
+
+
+Completed 200 OK in 511ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 2243)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 254ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 283ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 270ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 982)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:43 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 261ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 265ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 980)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 282ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 278ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1020)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 259ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 1031)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:46 -0500
+Completed 200 OK in 261ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1263)
+
+
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 251ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 984)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 258ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1021)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:28:47 -0500
+Completed 200 OK in 260ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1259)
+
+
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 261ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 983)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:29:15 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 261ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 980)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-13 14:29:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 14:29:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 274ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 978)
+
+
+Started GET "/api/v1/properties" for 127.0.0.1 at 2020-10-13 14:29:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/properties"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:29:36 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 76ms (Views: 39.7ms | ActiveRecord: 3.0ms | Allocations: 40444)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:31:59 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 14ms (Views: 2.5ms | ActiveRecord: 1.4ms | Allocations: 5474)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:32:14 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 0.8ms | Allocations: 5473)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:38:51 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 19ms (Views: 8.1ms | ActiveRecord: 1.0ms | Allocations: 5552)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:51:59 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (1.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 21ms (Views: 10.1ms | ActiveRecord: 2.1ms | Allocations: 5538)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 14:53:11 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 5453)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 15:00:31 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.9ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 25ms (Views: 6.0ms | ActiveRecord: 1.9ms | Allocations: 5538)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 15:01:59 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 27ms (Views: 14.6ms | ActiveRecord: 0.6ms | Allocations: 5453)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 15:02:22 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 37ms (Views: 14.0ms | ActiveRecord: 0.8ms | Allocations: 5456)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 15:03:56 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 21ms (Views: 5.8ms | ActiveRecord: 0.5ms | Allocations: 5453)
+
+
+Started GET "/api/v1/users/6/properties" for 127.0.0.1 at 2020-10-13 15:04:30 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/properties_controller.rb:9:in `index'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/controllers/api/v1/properties_controller.rb:15:in `index'
+Completed 200 OK in 23ms (Views: 12.9ms | ActiveRecord: 1.1ms | Allocations: 5474)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 15:54:28 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 913)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 15:54:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 271ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 6264)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 15:57:24 -0500
+  
+SyntaxError (/home/norman/lahaus/lahaus_api/app/models/photo.rb:7: syntax error, unexpected ':', expecting keyword_end
+  after_save: { PhotoQualityJob.check_qual...
+            ^
+/home/norman/lahaus/lahaus_api/app/models/photo.rb:7: syntax error, unexpected '}', expecting =>
+...ob.check_quality(property_id) }
+...                              ^):
+  
+app/models/photo.rb:7: syntax error, unexpected ':', expecting keyword_end
+app/models/photo.rb:7: syntax error, unexpected '}', expecting =>
+app/models/photo.rb:7: syntax error, unexpected ':', expecting keyword_end
+app/models/photo.rb:7: syntax error, unexpected '}', expecting =>
+Error occurred while parsing request parameters.
+Contents:
+
+{"urls":"["url1", "url2"]", "property_id":"1"}
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 15:59:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ArgumentError (Unknown key: :presence. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  
+app/models/photo.rb:4:in `<class:Photo>'
+app/models/photo.rb:1:in `<top (required)>'
+Error occurred while parsing request parameters.
+Contents:
+
+{"urls":"["url1", "url2"]", "property_id":"1"}
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 15:59:57 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{"urls":"["url1", "url2"]", "property_id":"1"}
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{"urls":"["url1", "url2"]", "property_id":"1"}'):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:114:in `rescue in parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:110:in `parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:389:in `block in POST'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch_header'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:388:in `POST'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:278:in `_wrapper_enabled?'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{"urls":"["url1", "url2"]", "property_id":"1"}
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:01:28 -0500
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 173)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:01:49 -0500
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+Completed 404 Not Found in 83ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 41611)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:02:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ArgumentError (Unknown key: :presence. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  
+app/models/photo.rb:4:in `<class:Photo>'
+app/models/photo.rb:1:in `<top (required)>'
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:03:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (81.7ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:03:10.698301"], ["updated_at", "2020-10-13 21:03:10.698301"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (86.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.5ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:03:10.881151"], ["updated_at", "2020-10-13 21:03:10.881151"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (109.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 500 Internal Server Error in 365ms (Views: 0.8ms | ActiveRecord: 281.2ms | Allocations: 51943)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/photos_controller.rb:62:in `rescue in create'
+app/controllers/api/v1/photos_controller.rb:46:in `create'
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:07:16 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.4ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:07:16.702654"], ["updated_at", "2020-10-13 21:07:16.702654"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (154.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (1.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:07:16.873272"], ["updated_at", "2020-10-13 21:07:16.873272"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (104.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 200 OK in 352ms (Views: 0.2ms | ActiveRecord: 264.1ms | Allocations: 48673)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:08:09 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:08:10.151580"], ["updated_at", "2020-10-13 21:08:10.151580"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (111.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (4.3ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:08:10.300228"], ["updated_at", "2020-10-13 21:08:10.300228"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (111.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 200 OK in 338ms (Views: 0.8ms | ActiveRecord: 230.7ms | Allocations: 48826)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:08:14 -0500
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (2.8ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:08:14.463560"], ["updated_at", "2020-10-13 21:08:14.463560"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (93.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (1.4ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:08:14.568925"], ["updated_at", "2020-10-13 21:08:14.568925"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (85.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 200 OK in 215ms (Views: 0.3ms | ActiveRecord: 184.0ms | Allocations: 12059)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:09:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:09:02.221475"], ["updated_at", "2020-10-13 21:09:02.221475"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (132.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.6ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:09:02.371571"], ["updated_at", "2020-10-13 21:09:02.371571"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (106.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 404 Not Found in 333ms (Views: 0.2ms | ActiveRecord: 244.6ms | Allocations: 48747)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:09:23 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (1.2ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:09:23.780148"], ["updated_at", "2020-10-13 21:09:23.780148"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (121.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.9ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (8.4ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:09:23.964547"], ["updated_at", "2020-10-13 21:09:23.964547"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (94.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 200 OK in 357ms (Views: 0.4ms | ActiveRecord: 230.0ms | Allocations: 48671)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:11:48 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:11:48.200593"], ["updated_at", "2020-10-13 21:11:48.200593"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (90.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (1.6ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:11:48.310367"], ["updated_at", "2020-10-13 21:11:48.310367"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (94.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 500 Internal Server Error in 394ms (Views: 0.4ms | ActiveRecord: 190.2ms | Allocations: 57048)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/photos_controller.rb:60:in `rescue in create'
+app/controllers/api/v1/photos_controller.rb:46:in `create'
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:13:18 -0500
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.6ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:13:18.605486"], ["updated_at", "2020-10-13 21:13:18.605486"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (132.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:13:18.754504"], ["updated_at", "2020-10-13 21:13:18.754504"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (103.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 500 Internal Server Error in 317ms (Views: 0.9ms | ActiveRecord: 238.7ms | Allocations: 13852)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/photos_controller.rb:60:in `rescue in create'
+app/controllers/api/v1/photos_controller.rb:46:in `create'
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:13:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:13:43.023690"], ["updated_at", "2020-10-13 21:13:43.023690"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (107.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (3.5ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:13:43.144071"], ["updated_at", "2020-10-13 21:13:43.144071"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (81.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+Completed 404 Not Found in 317ms (Views: 0.8ms | ActiveRecord: 196.7ms | Allocations: 49736)
+
+
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-13 16:17:16 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"urls"=>["url1", "url2"], "property_id"=>"1", "user_id"=>"1", "photo"=>{"property_id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (0.5ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url1"], ["property_id", 1], ["created_at", "2020-10-13 21:17:16.783077"], ["updated_at", "2020-10-13 21:17:16.783077"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (107.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[36mPhoto Create (2.0ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "url2"], ["property_id", 1], ["created_at", "2020-10-13 21:17:16.916763"], ["updated_at", "2020-10-13 21:17:16.916763"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+  [1m[35m (98.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:53:in `block in create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: 53867031-6653-45b3-9d5f-6d4b5decd08b) to Async(default) with arguments: ["url1", "url2"]
+Completed 200 OK in 309ms (Views: 0.1ms | ActiveRecord: 212.6ms | Allocations: 49239)
+
+
+[ActiveJob] [PhotoQualityJob] [53867031-6653-45b3-9d5f-6d4b5decd08b] Performing PhotoQualityJob (Job ID: 53867031-6653-45b3-9d5f-6d4b5decd08b) from Async(default) enqueued at 2020-10-13T21:17:17Z with arguments: ["url1", "url2"]
+[ActiveJob] [PhotoQualityJob] [53867031-6653-45b3-9d5f-6d4b5decd08b] Performed PhotoQualityJob (Job ID: 53867031-6653-45b3-9d5f-6d4b5decd08b) from Async(default) in 58.18ms

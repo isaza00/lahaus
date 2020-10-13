@@ -15,11 +15,8 @@ $(function () {
       success: function (result) {
         const userId = result.user.id;
         const token = result.token;
-        if (result.user.isadmin) {
-          window.location.href = 'admin.html?user_id=' + userId + '&token=' + token;
-        } else {
-          window.location.href = 'profile.html?user_id=' + userId + '&token=' + token;
-        }
+        window.location.reload();
+        window.location.href = 'admin.html?userId=' + userId + '&token=' + token;
       }
     });
   });
