@@ -1,9 +1,13 @@
-const url = 'http://localhost:3000/api/v1/properties';
+const url = 'http://localhost:3000/api/v1/users/properties';
 const $ = window.$;
+const searchParams = new URLSearchParams(window.location.search);
+const token = searchParams.get('token');
+const userId = searchParams.get('userId');
 
 $(function () {
   $.ajax({
     url: url,
+    
     success: function (response) {
       console.log(response.properties);
       for (const property of response.properties) {

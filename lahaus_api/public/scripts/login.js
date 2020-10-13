@@ -14,7 +14,12 @@ $(function () {
       dataType: 'json',
       success: function (result) {
         const userId = result.user.id;
-        console.log(userId);
+        const token = result.token;
+        if (result.user.isadmin) {
+          window.location.href = 'admin.html?user_id=' + userId + '&token=' + token;
+        } else {
+          window.location.href = 'profile.html?user_id=' + userId + '&token=' + token;
+        }
       }
     });
   });
