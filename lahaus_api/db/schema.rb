@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_11_143722) do
+ActiveRecord::Schema.define(version: 2020_10_13_005654) do
 
   create_table "photos", force: :cascade do |t|
     t.string "url"
@@ -27,17 +27,28 @@ ActiveRecord::Schema.define(version: 2020_10_11_143722) do
     t.string "price"
     t.string "address"
     t.string "apt"
-    t.string "tower"
     t.string "hood"
     t.string "city"
     t.string "private_area"
-    t.string "estrato"
-    t.integer "beds"
-    t.integer "baths"
-    t.string "contact_1"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "admon"
+    t.string "build_area"
+    t.string "social_class"
+    t.string "state"
+    t.boolean "elevator"
+    t.string "common_areas"
+    t.string "property_tax"
+    t.string "rooms"
+    t.string "bathrooms"
+    t.string "half_bathrooms"
+    t.string "parking_lot"
+    t.boolean "utility_room"
+    t.boolean "empty_property"
+    t.boolean "inhabitants"
+    t.string "rent"
+    t.string "mortgage"
     t.index ["built_type"], name: "index_properties_on_built_type"
     t.index ["city"], name: "index_properties_on_city"
     t.index ["hood"], name: "index_properties_on_hood"
@@ -51,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_10_11_143722) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "isadmin", default: false
+    t.string "full_name"
+    t.string "cellphone"
     t.index ["email"], name: "index_users_on_email"
   end
 
