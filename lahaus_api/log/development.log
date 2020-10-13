@@ -11118,3 +11118,455 @@ Processing by Api::V1::UsersController#login as JSON
 Completed 200 OK in 279ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 7660)
 
 
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:26:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 307ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1007)
+
+
+Started GET "/api/v1/users/profile.html/?userId=1" for 127.0.0.1 at 2020-10-13 12:26:14 -0500
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"userId"=>"1", "user_id"=>"profile"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 135)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:27:24 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 275ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 974)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 12:30:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 12:31:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:32:03 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 282ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1024)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:10 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 266ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 991)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 277ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 974)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:22 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 416ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 974)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:25 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 305ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 975)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 279ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 991)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 271ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 975)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 325ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 984)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 279ms (Views: 0.5ms | ActiveRecord: 3.5ms | Allocations: 1032)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:28 -0500
+Completed 200 OK in 272ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1031)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:28 -0500
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:28 -0500
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 276ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1922)
+
+
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 200 OK in 336ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 2678)
+
+
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 295ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1030)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:34:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+Completed 200 OK in 646ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 3223)
+
+
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 309ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 984)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:36:07 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 275ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 974)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:37:25 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 286ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 976)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:38:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 263ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 976)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:39:09 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ejemplo1@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 267ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 974)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:40:15 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 271ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 975)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 12:41:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:42:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 277ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 975)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 12:46:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:47:05 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 280ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 973)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:47:07 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 267ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 974)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:47:09 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 323ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 979)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 12:50:24 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.6ms | Allocations: 200)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 908)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 12:50:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:50:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 284ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:51:17 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 277ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 975)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:51:23 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 283ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 974)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:51:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 264ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 974)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:51:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 305ms (Views: 1.9ms | ActiveRecord: 2.5ms | Allocations: 977)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-10-13 12:53:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:53:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 308ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 973)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 12:53:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 280ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 979)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-13 13:00:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:63:in `login'
+Completed 200 OK in 276ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1002)
+
+

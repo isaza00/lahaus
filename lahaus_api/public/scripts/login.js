@@ -1,5 +1,4 @@
 const url = 'http://localhost:3000/api/v1/login';
-const url1 = 'http://localhost:3000/api/v1/users/profile.html/';
 const $ = window.$;
 $(function () {
   $('#login-btn').click(function (e) {
@@ -15,9 +14,7 @@ $(function () {
       dataType: 'json',
       success: function (result) {
         const userId = result.user.id;
-        $.ajax({
-          url: url1 + '?userId=' + userId
-        });
+        console.log(userId);
       }
     });
   });
