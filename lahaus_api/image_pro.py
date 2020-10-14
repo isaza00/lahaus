@@ -27,16 +27,19 @@ url = ["https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1
 thresh = 130
 limit_ilum = 70
 limit_foc = 200
-ilum = []
+baseWidth = 50
+illum = []
 foc = []
 
-def ilumination(img):
+def illumination(img):
   #rez = img.resize((1, 1))
-  fn = lambda x : 255 if x > thresh else 0
-  color = img.convert('L').point(fn, '1')
+  relation = (baseWidth/float(img.size[0]))
+  baseHeigth = int((float(img.size[1])*float(relation)))
+  resizedImage = img.resize((baseWidth, baseHeigth))
+  color = resizedImage.convert('L').point(lambda x : 255 if x > thresh else 0, '1')
   pixs = color.getdata()
   pixs = [sets for sets in pixs]
-  ilum.append(sum(pixs)/len(pixs) > limit_ilum)
+  illum.append(sum(pixs)/len(pixs) > limit_ilum)
   #print(sum(pixs)/len(pixs) > limit)
   #input()
   #print(int(str(color).split()[5][:-1], 16))
@@ -52,8 +55,9 @@ for link in url:
     with open('img.jpg', 'wb') as f:
         f.write(requests.get(link).content)
     with Image.open('./img.jpg') as img:
-        ilumination(img)
+        illumination(img)
         #img.show()
-        focus()
-print("ilumination:", ilum)
+    focus()
+print("ilumination:", illum)
 print("focus", foc)
+print([a and b for a, b in zip(illum, foc)])
