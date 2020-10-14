@@ -24,7 +24,7 @@ class Api::V1::UsersController < ApplicationController
     begin
       user = User.find(params[:user_id])
       if user.destroy
-        head 204
+        render json: { user: user }, status: 204
       else
         render json: { errors: user.errors.messages }, status: 422
       end
@@ -51,7 +51,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      token = encode_token({user_id: user.id, permisos: "admin"})
+      token = encode_token({user_id: user.id})
       render json: {user: user, token: token}, status: :created
     else
       render json: { errors: user.errors.messages }, status: 422
