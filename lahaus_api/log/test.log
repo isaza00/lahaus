@@ -22763,3 +22763,1599 @@ Processing by Api::V1::UsersController#destroy as JSON
 Completed 204 No Content in 5ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 1829)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (504.6ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mTruncate Tables (504.3ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (4.7ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (1.1ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 13:54:43.215227', '2020-10-14 13:54:43.215227');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 13:54:43.215227', '2020-10-14 13:54:43.215227');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$c0xGvjNnTtqyBqqk4eOTh.VyUBAoCEtfm8uYHoJCccbaBLd03vAzi', '2020-10-14 13:54:43.215227', '2020-10-14 13:54:43.215227', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$2Gvi7YYYfL3Carr7NlVOyuERhy2m0Xnfd0fb4AKUvk/kqetO1Apfq', '2020-10-14 13:54:43.215227', '2020-10-14 13:54:43.215227', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 13:54:43.217318', '2020-10-14 13:54:43.217318');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 13:54:43.217318', '2020-10-14 13:54:43.217318');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 13:54:43.219729', '2020-10-14 13:54:43.219729');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 13:54:43.219729', '2020-10-14 13:54:43.219729')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.9ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 13:54:43.217336', '2020-10-14 13:54:43.217336');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 13:54:43.217336', '2020-10-14 13:54:43.217336');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$LMLv8COzqPOtQtdWG5aGr..TLA24vh1qSK7WZBe0dm2FHavRU8r1K', '2020-10-14 13:54:43.217336', '2020-10-14 13:54:43.217336', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$MSDDt2eMigy.C6.yF2lprepJf4zkJWBoPSzOuD2uNH7b5zdLWANJq', '2020-10-14 13:54:43.217336', '2020-10-14 13:54:43.217336', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 13:54:43.219265', '2020-10-14 13:54:43.219265');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 13:54:43.219265', '2020-10-14 13:54:43.219265');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 13:54:43.221645', '2020-10-14 13:54:43.221645');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 13:54:43.221645', '2020-10-14 13:54:43.221645')[0m
+  [1m[35m (212.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (214.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+---------------------------------------------------------------
+UsersControllerTest: test_check_correct_update_of_user_full_name
+UsersControllerTest: test_authorized_for_admin_to_show_any_user
+----------------------------------------------------------------
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:43 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:43 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 6480)
+Completed 200 OK in 256ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 6480)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:43 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:43 -0500
+Processing by Api::V1::UsersController#login as JSON
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 534)
+Completed 200 OK in 245ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Started PUT "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+Error occurred while parsing request parameters.
+Contents:
+
+full_name=new_name
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+-----------------------------------------------------
+UsersControllerTest: test_checks_creation_of_new_user
+-----------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 2101)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_empty_parameters
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 247ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/users/" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "full_name"=>"ejemplo2", "cellphone"=>"3001234567"}
+[31mUnpermitted parameter: :format[0m
+Completed 200 OK in 243ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$04$2336aPCAOk9lt1s0J00Iqu6D2imx/olJKk4vY9aXxKzDLYoPPqj5O"], ["created_at", "2020-10-14 13:54:44.622732"], ["updated_at", "2020-10-14 13:54:44.622732"], ["full_name", "ejemplo2"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::UsersController#login as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 201 Created in 12ms (Views: 1.3ms | ActiveRecord: 1.6ms | Allocations: 2268)
+Completed 401 Unauthorized in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 352)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_for_index
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_Failed_sing_up_due_to_invalid_email
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 542)
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 248ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 535)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Completed 200 OK in 250ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 535)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1844)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_user_to_delete_himself
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 14ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 4934)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_invalid_email
+------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 248ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 245ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+Completed 204 No Content in 16ms (Views: 0.7ms | ActiveRecord: 1.3ms | Allocations: 5943)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 243)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_for_index
+---------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_delete_user
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 263ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 543)
+Completed 200 OK in 263ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :isadmin? rendered or redirected
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1003)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_user_to_show_any_other_user
+------------------------------------------------------------------
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 15ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 6643)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+UsersControllerTest: test_Attempt_accessing_without_logging_in_should_fail
+--------------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1541)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+UsersControllerTest: test_authorized_user_to_show_his_own_user
+--------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 123)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_to_delete_another_user
+----------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 248ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 08:54:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 08:54:47 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1377)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 244ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 08:54:47 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1541)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (888.6ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mTruncate Tables (886.9ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (1.2ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$l.h/3dPLZzWyWFOzaVV4luKj9YzuktGp.i0iwNj2DM/KQqGz9PQx2', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$kaLzYJtzvyfQouPyyS7hsuKpPe3caKei9lgU3DaRu5gx02viZDJv.', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 14:13:36.702804', '2020-10-14 14:13:36.702804');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 14:13:36.702804', '2020-10-14 14:13:36.702804');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 14:13:36.704811', '2020-10-14 14:13:36.704811');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 14:13:36.704811', '2020-10-14 14:13:36.704811')[0m
+  [1m[36mFixtures Load (1.2ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$7V/Z2lIyU1poDoipX./KlONvQDN9t9KX/PhL/d0EHoHaA3COyiKNK', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$gwUy3yd1jI1iw6HL4.81OO4.8hCbW9h1ZSbXRpsTasGMJo.SsB8gq', '2020-10-14 14:13:36.700988', '2020-10-14 14:13:36.700988', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 14:13:36.702804', '2020-10-14 14:13:36.702804');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 14:13:36.702804', '2020-10-14 14:13:36.702804');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 14:13:36.704811', '2020-10-14 14:13:36.704811');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 14:13:36.704811', '2020-10-14 14:13:36.704811')[0m
+  [1m[35m (158.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (158.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_for_index
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_delete_user
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 248ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 6482)
+Completed 200 OK in 248ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 6482)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1189)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+UsersControllerTest: test_Attempt_accessing_without_logging_in_should_fail
+--------------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 34ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 6667)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_user_to_delete_himself
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 260ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 534)
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 120)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+UsersControllerTest: test_check_correct_update_of_user_full_name
+----------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 11ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1829)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_Failed_sing_up_due_to_invalid_email
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started PUT "/api/v1/users/100/" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+full_name=new_name
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_user_to_show_any_other_user
+------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 21ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 5580)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_for_index
+--------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 247ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 1655)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_to_delete_another_user
+----------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1845)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UsersControllerTest: test_checks_creation_of_new_user
+-----------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 253ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 249ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 249ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 535)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1541)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_empty_parameters
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/users/" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "full_name"=>"ejemplo2", "cellphone"=>"3001234567"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$04$XnJz2b/k3w8eAlX3KAD4M.aVxJST03IykLiDC32DNYznKjH/B.Y5e"], ["created_at", "2020-10-14 14:13:39.638333"], ["updated_at", "2020-10-14 14:13:39.638333"], ["full_name", "ejemplo2"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 1598)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_invalid_email
+------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 251ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 250ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 356)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+UsersControllerTest: test_authorized_user_to_show_his_own_user
+--------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 250ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 243)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_show_any_user
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1377)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 246ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:13:40 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1801)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (546.7ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTruncate Tables (589.1ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 14:16:26.030564', '2020-10-14 14:16:26.030564');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 14:16:26.030564', '2020-10-14 14:16:26.030564');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$R1OHMti6Wxks1fIO5Mys6up6PtjEkRTEPt5KTVrcU4ylSdZ63r5MO', '2020-10-14 14:16:26.030564', '2020-10-14 14:16:26.030564', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$iYudt4eeclZzYENOSCK/8.jxqVrv5BJHF.DhmC17nWfN9hF8u1qaG', '2020-10-14 14:16:26.030564', '2020-10-14 14:16:26.030564', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 14:16:26.032919', '2020-10-14 14:16:26.032919');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 14:16:26.032919', '2020-10-14 14:16:26.032919');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 14:16:26.036304', '2020-10-14 14:16:26.036304');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 14:16:26.036304', '2020-10-14 14:16:26.036304')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 14:16:26.039968', '2020-10-14 14:16:26.039968');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 14:16:26.039968', '2020-10-14 14:16:26.039968');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$8GiQ4RkDwgvSGu8EuvpMsuB0Xt/G8g5NmwPs9CpSX9TBiJ4ZJHoPy', '2020-10-14 14:16:26.039968', '2020-10-14 14:16:26.039968', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$Yivs7nQGeBJu6adKI2Tj/.TJmyJcONDZquvD5V.4pNx7q5XmylDH6', '2020-10-14 14:16:26.039968', '2020-10-14 14:16:26.039968', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 14:16:26.042912', '2020-10-14 14:16:26.042912');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 14:16:26.042912', '2020-10-14 14:16:26.042912');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 14:16:26.045996', '2020-10-14 14:16:26.045996');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 14:16:26.045996', '2020-10-14 14:16:26.045996')[0m
+  [1m[35m (173.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_delete_user
+-------------------------------------------------------------
+  [1m[35m (208.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_user_to_delete_himself
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 6497)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 6497)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 241ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 204 No Content in 16ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 6667)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UsersControllerTest: test_checks_creation_of_new_user
+-----------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 20ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 6243)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_Failed_sing_up_due_to_invalid_email
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/users/" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "full_name"=>"ejemplo2", "cellphone"=>"3001234567"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$04$sTzKD5vB7VpY9hqRUN2IfO2sXbfZ8jpCK.dloNtEXcULTQ5X3lrO."], ["created_at", "2020-10-14 14:16:27.397924"], ["updated_at", "2020-10-14 14:16:27.397924"], ["full_name", "ejemplo2"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 242ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+Completed 201 Created in 8ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 2243)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_show_any_user
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 15ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 5579)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_for_index
+---------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 247ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1801)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+UsersControllerTest: test_check_correct_update_of_user_full_name
+----------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 247ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1003)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+UsersControllerTest: test_Attempt_accessing_without_logging_in_should_fail
+--------------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:27 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started PUT "/api/v1/users/100/" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+full_name=new_name
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_invalid_email
+------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 120)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_for_index
+--------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 243)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+UsersControllerTest: test_authorized_user_to_show_his_own_user
+--------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1845)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_empty_parameters
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:28 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 245ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1377)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_to_delete_another_user
+----------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 354)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_user_to_show_any_other_user
+------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1544)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 243ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 09:16:29 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1541)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (452.7ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTruncate Tables (494.4ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 14:22:45.049552', '2020-10-14 14:22:45.049552');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 14:22:45.049552', '2020-10-14 14:22:45.049552');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$B/VoeXxT5OShOA8aOBIaD.6poKP7SvgkBBgzIrwvYHBr43WuttVWm', '2020-10-14 14:22:45.049552', '2020-10-14 14:22:45.049552', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$IDMyg3bCdpgcodvsbDP9OeNNVgc55ESly6kDhLLVOx6WmfoQmKXrS', '2020-10-14 14:22:45.049552', '2020-10-14 14:22:45.049552', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 14:22:45.051540', '2020-10-14 14:22:45.051540');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 14:22:45.051540', '2020-10-14 14:22:45.051540');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 14:22:45.055097', '2020-10-14 14:22:45.055097');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 14:22:45.055097', '2020-10-14 14:22:45.055097')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (1.1ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-14 14:22:45.058769', '2020-10-14 14:22:45.058769');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-14 14:22:45.058769', '2020-10-14 14:22:45.058769');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$UKR83hwRSi4w8AHdBAXNjOTytUUGj809sLANwctUP6HBAyq5zWvPW', '2020-10-14 14:22:45.058769', '2020-10-14 14:22:45.058769', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$HPK6gZvgIHnLgCMJ8s67Qe8XaU3L29.O5TbFXQMSj.6hlugoWPh9G', '2020-10-14 14:22:45.058769', '2020-10-14 14:22:45.058769', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-14 14:22:45.061544', '2020-10-14 14:22:45.061544');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-14 14:22:45.061544', '2020-10-14 14:22:45.061544');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-14 14:22:45.065106', '2020-10-14 14:22:45.065106');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-14 14:22:45.065106', '2020-10-14 14:22:45.065106')[0m
+  [1m[35m (160.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+  [1m[35m (158.5ms)[0m  [1m[36mcommit transaction[0m
+UsersControllerTest: test_Attempt_accessing_without_logging_in_should_fail
+--------------------------------------------------------------------------
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_Failed_sing_up_due_to_invalid_email
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 267ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 6480)
+Completed 200 OK in 267ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 6480)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 123)
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_empty_parameters
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 19ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 5601)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_delete_user
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:45 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 357)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_user_to_delete_himself
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 19ms (Views: 0.5ms | ActiveRecord: 2.7ms | Allocations: 6654)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UsersControllerTest: test_checks_creation_of_new_user
+-----------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 259ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 253ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 17ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 6243)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_for_index
+--------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/users/" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "full_name"=>"ejemplo2", "cellphone"=>"3001234567"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$04$qCezGH7LUmhdghK6BIs7W.FN/jlbDK7RGRHt76MEr/Ttg/FfiyxUm"], ["created_at", "2020-10-14 14:22:46.965550"], ["updated_at", "2020-10-14 14:22:46.965550"], ["full_name", "ejemplo2"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1598)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_show_any_user
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1844)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_invalid_email
+------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1801)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_for_index
+---------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 241ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 243)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_to_delete_another_user
+----------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 535)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1003)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+UsersControllerTest: test_check_correct_update_of_user_full_name
+----------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1541)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_user_to_show_any_other_user
+------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started PUT "/api/v1/users/100/" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+full_name=new_name
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+UsersControllerTest: test_authorized_user_to_show_his_own_user
+--------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 543)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/101" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"101", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1541)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 245ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-14 09:22:48 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1377)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

@@ -77,7 +77,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "authorized for admin to delete user" do
     assert_difference('User.count', -1) do
-      delete "/api/v1/users/100", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@admin_token}" }
+      delete "/api/v1/users/100", headers: { "Content-type": "application/json", "Authorization": "Bearer #{@admin_token}" }
     end
     assert_response 204
   end
@@ -94,10 +94,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal JSON.parse(@response.body)["token"], JWT.encode({user_id: user["id"]}, 's3cr3t')
   end
 
-  #test "check correct update of user full_name" do
-  #  put "/api/v1/users/100", params: {ull_name: "new_name"}, headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
-  #  assert_response :ok
-  #  #assert_equal JSON.parse(@response.body)["user"]["full_name"], "new_name"
-  #end
+  test "check correct update of user full_name" do
+    put "/api/v1/users/100/", headers: { "Content-type": "application/json", "Authorization": "Bearer #{@user_token}" }, params: {full_name: "new_name"}
+    assert_response :ok
+    assert_equal JSON.parse(@response.body)["user"]["full_name"], "new_name"
+  end
 
 end
