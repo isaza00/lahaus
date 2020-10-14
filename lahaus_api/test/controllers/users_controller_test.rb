@@ -95,7 +95,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   #test "check correct update of user full_name" do
-  #  put "/api/v1/users/100", params: {user: {full_name: "new_name"}}, headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
+  #  put "/api/v1/users/100", params: {ull_name: "new_name"}, headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
   #  assert_response :ok
   #  #assert_equal JSON.parse(@response.body)["user"]["full_name"], "new_name"
   #end
