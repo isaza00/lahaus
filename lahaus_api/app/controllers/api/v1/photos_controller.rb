@@ -45,20 +45,17 @@ class Api::V1::PhotosController < ApplicationController
   #POST /api/v1/users/:id/properties/:property_id/photos
   def create
     begin
-      urls = params[:urls]
       user = User.find(params[:user_id])
       property = Property.find(params[:property_id])
-      for url in urls
-        photo = Photo.new(url: url, property_id: property.id)
-        if !photo.save
-          render json: { errors: photo.errors.messages }, status: 422
-        end
+      photo = Photo.new(photo_params)
+      if photo.save
+        PhotoQualityJob.perform_later photo.id
+        render json: photo, status: :ok
+      else
+        render json: { errors: photo.errors.messages }, status: 422
       end
-      PhotoQualityJob.perform_later(urls)
-      render json: {}, status: :ok
     rescue => e
       render json: { errors: e.message }, status: 404
-
     end
   end
 
@@ -75,7 +72,7 @@ class Api::V1::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.permit(:urls, :property_id, :accepted)
+    params.permit(:url, :property_id, :accepted)
   end
 
 end
