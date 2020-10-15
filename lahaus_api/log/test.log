@@ -28042,3 +28042,2032 @@ Processing by Api::V1::UsersController#update as JSON
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 2494)
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos"[0m
+  [1m[35m (106.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean, "accepted_lum" boolean)[0m
+  [1m[35m (110.7ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (106.0ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "built_type" varchar, "price" varchar, "address" varchar, "apt" varchar, "hood" varchar, "city" varchar, "private_area" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar, "build_area" varchar, "social_class" varchar, "state" varchar, "elevator" boolean, "common_areas" varchar, "property_tax" varchar, "rooms" varchar, "bathrooms" varchar, "half_bathrooms" varchar, "parking_lot" varchar, "utility_room" boolean, "empty_property" boolean, "inhabitants" boolean, "rent" varchar, "mortgage" varchar)[0m
+  [1m[35m (90.5ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (115.7ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (94.5ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (98.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (102.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (94.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "isadmin" boolean DEFAULT 0, "full_name" varchar, "cellphone" varchar)[0m
+  [1m[35m (88.7ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphotos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean DEFAULT NULL, "accepted_lum" boolean DEFAULT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_aphotos_on_property_id" ON "aphotos" ("property_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "aphotos" ("id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum" FROM "photos"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "photos"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean DEFAULT NULL, "accepted_lum" boolean DEFAULT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "photos" ("id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum" FROM "aphotos"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "aphotos"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (100.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (104.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (73.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201015003144)[0m
+  [1m[35m (76.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200920140300),
+(20200920142212),
+(20200928162141),
+(20200928194359),
+(20200928195320),
+(20200929012706),
+(20200929014510),
+(20201005185525),
+(20201011142729),
+(20201011143722),
+(20201013003510),
+(20201013005654);
+
+[0m
+  [1m[35m (97.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-10-15 18:36:06.082263"], ["updated_at", "2020-10-15 18:36:06.082263"]]
+  [1m[35m (72.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "195ddc125391c10d2b1ff3c016dfb0734beb49af"], ["created_at", "2020-10-15 18:36:06.161325"], ["updated_at", "2020-10-15 18:36:06.161325"]]
+  [1m[35m (72.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos"[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos"[0m
+  [1m[35m (167.0ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean, "accepted_lum" boolean)[0m
+  [1m[35m (190.7ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "property_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean, "accepted_lum" boolean)[0m
+  [1m[35m (193.5ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (217.7ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (213.1ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "built_type" varchar, "price" varchar, "address" varchar, "apt" varchar, "hood" varchar, "city" varchar, "private_area" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar, "build_area" varchar, "social_class" varchar, "state" varchar, "elevator" boolean, "common_areas" varchar, "property_tax" varchar, "rooms" varchar, "bathrooms" varchar, "half_bathrooms" varchar, "parking_lot" varchar, "utility_room" boolean, "empty_property" boolean, "inhabitants" boolean, "rent" varchar, "mortgage" varchar)[0m
+  [1m[35m (197.7ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "project" varchar, "built_type" varchar, "price" varchar, "address" varchar, "apt" varchar, "hood" varchar, "city" varchar, "private_area" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar, "build_area" varchar, "social_class" varchar, "state" varchar, "elevator" boolean, "common_areas" varchar, "property_tax" varchar, "rooms" varchar, "bathrooms" varchar, "half_bathrooms" varchar, "parking_lot" varchar, "utility_room" boolean, "empty_property" boolean, "inhabitants" boolean, "rent" varchar, "mortgage" varchar)[0m
+  [1m[35m (169.6ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (200.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (236.3ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (225.3ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (128.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (187.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (193.4ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (209.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (161.0ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (191.0ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (200.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "isadmin" boolean DEFAULT 0, "full_name" varchar, "cellphone" varchar)[0m
+  [1m[35m (206.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "isadmin" boolean DEFAULT 0, "full_name" varchar, "cellphone" varchar)[0m
+  [1m[35m (230.4ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphotos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean DEFAULT NULL, "accepted_lum" boolean DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aphotos_on_property_id" ON "aphotos" ("property_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphotos" ("id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum" FROM "photos"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "photos"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean DEFAULT NULL, "accepted_lum" boolean DEFAULT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (198.6ms)[0m  [1m[35mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "photos" ("id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum" FROM "aphotos"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aphotos"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphotos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean DEFAULT NULL, "accepted_lum" boolean DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aphotos_on_property_id" ON "aphotos" ("property_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aphotos" ("id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum" FROM "photos"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "photos"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer NOT NULL PRIMARY KEY, "url" varchar DEFAULT NULL, "property_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "accepted_foc" boolean DEFAULT NULL, "accepted_lum" boolean DEFAULT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_property_id" ON "photos" ("property_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum")
+                     SELECT "id","url","property_id","created_at","updated_at","accepted_foc","accepted_lum" FROM "aphotos"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "aphotos"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (142.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (133.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproperties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_user_id" ON "aproperties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_price" ON "aproperties" ("price")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_hood" ON "aproperties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_city" ON "aproperties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproperties_on_built_type" ON "aproperties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproperties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "properties"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "properties" ("id" integer NOT NULL PRIMARY KEY, "project" varchar DEFAULT NULL, "built_type" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "apt" varchar DEFAULT NULL, "hood" varchar DEFAULT NULL, "city" varchar DEFAULT NULL, "private_area" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admon" varchar DEFAULT NULL, "build_area" varchar DEFAULT NULL, "social_class" varchar DEFAULT NULL, "state" varchar DEFAULT NULL, "elevator" boolean DEFAULT NULL, "common_areas" varchar DEFAULT NULL, "property_tax" varchar DEFAULT NULL, "rooms" varchar DEFAULT NULL, "bathrooms" varchar DEFAULT NULL, "half_bathrooms" varchar DEFAULT NULL, "parking_lot" varchar DEFAULT NULL, "utility_room" boolean DEFAULT NULL, "empty_property" boolean DEFAULT NULL, "inhabitants" boolean DEFAULT NULL, "rent" varchar DEFAULT NULL, "mortgage" varchar DEFAULT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_built_type" ON "properties" ("built_type")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_city" ON "properties" ("city")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_hood" ON "properties" ("hood")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_price" ON "properties" ("price")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_properties_on_user_id" ON "properties" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage")
+                     SELECT "id","project","built_type","price","address","apt","hood","city","private_area","user_id","created_at","updated_at","admon","build_area","social_class","state","elevator","common_areas","property_tax","rooms","bathrooms","half_bathrooms","parking_lot","utility_room","empty_property","inhabitants","rent","mortgage" FROM "aproperties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproperties"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (130.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (104.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (161.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (218.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (134.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201015003144)[0m
+  [1m[35m (149.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201015003144)[0m
+  [1m[35m (165.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200920140300),
+(20200920142212),
+(20200928162141),
+(20200928194359),
+(20200928195320),
+(20200929012706),
+(20200929014510),
+(20201005185525),
+(20201011142729),
+(20201011143722),
+(20201013003510),
+(20201013005654);
+
+[0m
+  [1m[35m (130.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200920140300),
+(20200920142212),
+(20200928162141),
+(20200928194359),
+(20200928195320),
+(20200929012706),
+(20200929014510),
+(20201005185525),
+(20201011142729),
+(20201011143722),
+(20201013003510),
+(20201013005654);
+
+[0m
+  [1m[35m (165.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (189.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-10-15 18:36:09.705627"], ["updated_at", "2020-10-15 18:36:09.705627"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-10-15 18:36:09.724562"], ["updated_at", "2020-10-15 18:36:09.724562"]]
+  [1m[35m (142.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (145.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Create (18.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "195ddc125391c10d2b1ff3c016dfb0734beb49af"], ["created_at", "2020-10-15 18:36:09.882973"], ["updated_at", "2020-10-15 18:36:09.882973"]]
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (6.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "195ddc125391c10d2b1ff3c016dfb0734beb49af"], ["created_at", "2020-10-15 18:36:09.916416"], ["updated_at", "2020-10-15 18:36:09.916416"]]
+  [1m[35m (136.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (135.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (2.0ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-15 18:36:10.764041', '2020-10-15 18:36:10.764041');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-15 18:36:10.764041', '2020-10-15 18:36:10.764041');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$tFjUvhjV8xKYUQc/FIDfuekm4Y1cbwiPkWftWOrZE2uH/zBgokIhi', '2020-10-15 18:36:10.764041', '2020-10-15 18:36:10.764041', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$FqLo.NXZu0rFu1LOJintjOV4ftin8ejvcH9VowpBPy8naRujGe9xq', '2020-10-15 18:36:10.764041', '2020-10-15 18:36:10.764041', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-15 18:36:10.771482', '2020-10-15 18:36:10.771482');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-15 18:36:10.771482', '2020-10-15 18:36:10.771482');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-15 18:36:10.779260', '2020-10-15 18:36:10.779260');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-15 18:36:10.779260', '2020-10-15 18:36:10.779260')[0m
+  [1m[36mFixtures Load (3.4ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-15 18:36:10.764040', '2020-10-15 18:36:10.764040');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-15 18:36:10.764040', '2020-10-15 18:36:10.764040');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$Kop.v1Nt5p9vML0QdKXHA.paaOECqDK/BIyb2jbM2ts5YsoTI4tXa', '2020-10-15 18:36:10.764040', '2020-10-15 18:36:10.764040', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$hYRWcdwGHLjfXDIqHAhO7emzrS6jCq0spNW96Tz5Uy0.kXFFiKA8q', '2020-10-15 18:36:10.764040', '2020-10-15 18:36:10.764040', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-15 18:36:10.770077', '2020-10-15 18:36:10.770077');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-15 18:36:10.770077', '2020-10-15 18:36:10.770077');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-15 18:36:10.778734', '2020-10-15 18:36:10.778734');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-15 18:36:10.778734', '2020-10-15 18:36:10.778734')[0m
+  [1m[35m (141.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PropertyTest: test_Should_create,_save,_and_destroy_a_property
+--------------------------------------------------------------
+  [1m[35m (181.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+PropertyTest: test_Should_not_create_a_property_without_a_user_id
+-----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 99], ["created_at", "2020-10-15 18:36:11.061305"], ["updated_at", "2020-10-15 18:36:11.061305"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."property_id" = ?[0m  [["property_id", 980190963]]
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ? LIMIT ?[0m  [["user_id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Destroy (0.1ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 980190963]]
+  [1m[36mProperty Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "properties" WHERE "properties"."user_id" = ? LIMIT ?[0m  [["user_id", 99], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PropertyTest: test_Should_have_successfully_created_a_property
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 99], ["created_at", "2020-10-15 18:36:11.073992"], ["updated_at", "2020-10-15 18:36:11.073992"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+PropertyTest: test_Should_not_create_a_property_without_built_type
+------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.9ms)[0m  [1m[32mINSERT INTO "properties" ("hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["hood", "Belen"], ["city", "Pizza"], ["user_id", 99], ["created_at", "2020-10-15 18:36:11.081786"], ["updated_at", "2020-10-15 18:36:11.081786"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+PropertyTest: test_Should_not_create_a_property_without_the_proper_built_type
+-----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_user_to_delete_himself
+UsersControllerTest: test_Failed_sing_up_due_to_invalid_email
+---------------------------------------------------------------
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 829)
+Completed 200 OK in 256ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 6276)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :format[0m
+Completed 200 OK in 272ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 12ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 4426)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+UsersControllerTest: test_check_correct_update_of_user_full_name
+----------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (1.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 19ms (Views: 0.8ms | ActiveRecord: 2.7ms | Allocations: 5215)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UsersControllerTest: test_checks_creation_of_new_user
+-----------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 266ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 295ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started PUT "/api/v1/users/100/" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+Processing by Api::V1::UsersController#update as JSON
+  Parameters: {"full_name"=>"newname", "user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :user_id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "full_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["full_name", "newname"], ["updated_at", "2020-10-15 18:36:12.468011"], ["id", 100]]
+Completed 200 OK in 285ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 2742)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/users/" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "full_name"=>"ejemplo2", "cellphone"=>"3001234567"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_to_delete_another_user
+----------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$04$j1y3WblPE8QdkPVmJr5vvegK1n1pJqLG4TmhnvIi6Iu5lBKbNbN4K"], ["created_at", "2020-10-15 18:36:12.477945"], ["updated_at", "2020-10-15 18:36:12.477945"], ["full_name", "ejemplo2"], ["cellphone", "3001234567"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 9ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 2049)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (1.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_invalid_email
+------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 534)
+Completed 200 OK in 261ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/101" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 243)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"101"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_for_index
+--------------------------------------------------------
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1540)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_user_to_show_any_other_user
+------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Completed 200 OK in 254ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 256ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1844)
+Started GET "/api/v1/users/101" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"101"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_delete_user
+-------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1537)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+UsersControllerTest: test_authorized_user_to_show_his_own_user
+--------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Completed 200 OK in 253ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 542)
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 534)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Completed 200 OK in 256ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1373)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Destroy (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 10ms (Views: 0.6ms | ActiveRecord: 2.1ms | Allocations: 2243)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_show_any_user
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_for_index
+---------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 261ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 261ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 542)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100"}
+Completed 200 OK in 255ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1797)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1003)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+UsersControllerTest: test_Attempt_accessing_without_logging_in_should_fail
+--------------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_Tests_the_update_method
+-------------------------------------------------
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 263ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 282ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-10-15 13:36:15 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 120)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_empty_parameters
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:15 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 269ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "full_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["full_name", "new_name"], ["updated_at", "2020-10-15 18:36:15.177391"], ["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+PropertiesControllerTest: test_index:_just_authorized_user
+----------------------------------------------------------
+Started GET "/api/v1/users/1/properties" for 127.0.0.1 at 2020-10-15 13:36:15 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 155)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------
+UserTest: test_Should_be_capable_of_accessing_the_amount_of_properties_a_user_has
+---------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UserTest: test_Successfully_create_and_destroy_a_user
+-----------------------------------------------------
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_should_not_save_user_without_a_password
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------
+UserTest: test_should_not_save_user_with_a_password_no_longer_than_4_characters
+-------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UserTest: test_should_not_save_user_without_proper_email
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "notanactualeimail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_should_not_save_user_with_an_email_longer_than_255_characters
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+UserTest: test_should_create_a_new_user
+---------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_should_not_save_user_without_email
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_should_NOT_create_a_user_with_a_repeated_email
+-------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+UserTest: test_should_find_the_new_created_user
+-----------------------------------------------
+Completed 200 OK in 291ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 258ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:36:15 -0500
+Processing by Api::V1::UsersController#login as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 351)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (405.1ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTruncate Tables (452.9ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (1.1ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-15 18:45:57.727255', '2020-10-15 18:45:57.727255');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-15 18:45:57.727255', '2020-10-15 18:45:57.727255');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$UcMmsdmUW1Uhg5YJHFx.lOw1Ocnj5nXuyjXOafcQsvYrik71YgFaW', '2020-10-15 18:45:57.727255', '2020-10-15 18:45:57.727255', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$v5uUMcM3OkB8xbB0k4xDLu6DVWj9/p/2VfpauSdQWjR43RVfCD2k6', '2020-10-15 18:45:57.727255', '2020-10-15 18:45:57.727255', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-15 18:45:57.729746', '2020-10-15 18:45:57.729746');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-15 18:45:57.729746', '2020-10-15 18:45:57.729746');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-15 18:45:57.742743', '2020-10-15 18:45:57.742743');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-15 18:45:57.742743', '2020-10-15 18:45:57.742743')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-15 18:45:57.771938', '2020-10-15 18:45:57.771938');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-15 18:45:57.771938', '2020-10-15 18:45:57.771938');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$YZZyKzBLyE1iCfa4lvJGou52ByIZ2BQoQHsS0iZ6wEwUIZebtbr36', '2020-10-15 18:45:57.771938', '2020-10-15 18:45:57.771938', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$yOKkjrjngAT.IjXuIHyxwOYYFBmYpAGfsVuBva18wv53/xA.QQFeK', '2020-10-15 18:45:57.771938', '2020-10-15 18:45:57.771938', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-15 18:45:57.773900', '2020-10-15 18:45:57.773900');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-15 18:45:57.773900', '2020-10-15 18:45:57.773900');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-15 18:45:57.790364', '2020-10-15 18:45:57.790364');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-15 18:45:57.790364', '2020-10-15 18:45:57.790364')[0m
+  [1m[35m (105.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UserTest: test_Successfully_create_and_destroy_a_user
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UserTest: test_should_not_save_user_without_proper_email
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (141.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+UserTest: test_should_create_a_new_user
+---------------------------------------
+  [1m[35m (2.5ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+UserTest: test_should_find_the_new_created_user
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_should_not_save_user_with_an_email_longer_than_255_characters
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_should_not_save_user_without_email
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+---------------------------------------------------------------------------------
+UserTest: test_Should_be_capable_of_accessing_the_amount_of_properties_a_user_has
+---------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_should_NOT_create_a_user_with_a_repeated_email
+-------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_should_not_save_user_without_a_password
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------
+UserTest: test_should_not_save_user_with_a_password_no_longer_than_4_characters
+-------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PropertyTest: test_Should_have_successfully_created_a_property
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PropertyTest: test_Should_create,_save,_and_destroy_a_property
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.7ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 99], ["created_at", "2020-10-15 18:45:58.087915"], ["updated_at", "2020-10-15 18:45:58.087915"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PropertyTest: test_Should_create_a_property
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.7ms)[0m  [1m[32mINSERT INTO "properties" ("hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["hood", "Belen"], ["city", "Pizza"], ["user_id", 99], ["created_at", "2020-10-15 18:45:58.096806"], ["updated_at", "2020-10-15 18:45:58.096806"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+PropertyTest: test_Should_not_create_a_property_without_the_proper_built_type
+-----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+PropertyTest: test_Should_not_create_a_property_without_a_user_id
+-----------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_Tests_the_update_method
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.0ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 99], ["created_at", "2020-10-15 18:45:58.131130"], ["updated_at", "2020-10-15 18:45:58.131130"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."property_id" = ?[0m  [["property_id", 980190963]]
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ? LIMIT ?[0m  [["user_id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Destroy (0.2ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 980190963]]
+  [1m[36mProperty Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "properties" WHERE "properties"."user_id" = ? LIMIT ?[0m  [["user_id", 99], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+UsersControllerTest: test_authorized_user_to_show_his_own_user
+--------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:58 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:58 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 267ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 839)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:58 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 266ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 832)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:58 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 310ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:45:58 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1653)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 351ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_to_delete_another_user
+----------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["id", 100], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "full_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["full_name", "new_name"], ["updated_at", "2020-10-15 18:45:58.833150"], ["id", 100]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_user_to_show_any_other_user
+------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:58 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/101" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"101"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1540)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+UsersControllerTest: test_check_correct_update_of_user_full_name
+----------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Completed 200 OK in 254ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/101" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"101"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1819)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_for_index
+--------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started PUT "/api/v1/users/100/" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#update as JSON
+  Parameters: {"full_name"=>"newname", "user_id"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :user_id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "full_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["full_name", "newname"], ["updated_at", "2020-10-15 18:45:59.877208"], ["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 2956)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_user_to_delete_himself
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1844)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_empty_parameters
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:45:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 6ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 2134)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_invalid_email
+------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 253ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 352)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_Failed_sing_up_due_to_invalid_email
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 243)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+UsersControllerTest: test_Attempt_accessing_without_logging_in_should_fail
+--------------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 534)
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 13ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3928)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UsersControllerTest: test_checks_creation_of_new_user
+-----------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 270ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 120)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_for_index
+---------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 534)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/users/" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "full_name"=>"ejemplo2", "cellphone"=>"3001234567"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$04$kzmsrda1eJeO1NSmhLN1OO3u0teLlyfCmGO1yVU1vhtGrCLDYK.1K"], ["created_at", "2020-10-15 18:46:01.496291"], ["updated_at", "2020-10-15 18:46:01.496291"], ["full_name", "ejemplo2"], ["cellphone", "3001234567"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 1524)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_delete_user
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1000)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_show_any_user
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:46:02 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 11ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 4460)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+PropertiesControllerTest: test_index:_just_authorized_user
+----------------------------------------------------------
+Started GET "/api/v1/users/1/properties" for 127.0.0.1 at 2020-10-15 13:46:02 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 155)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 266ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:46:02 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 249ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:46:02 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1797)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.7ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (379.3ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mTruncate Tables (380.2ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "photos";
+DELETE FROM "properties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-15 18:47:10.318592', '2020-10-15 18:47:10.318592');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-15 18:47:10.318592', '2020-10-15 18:47:10.318592');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$eAb8otlqghws6lrkUuXtUOB/NUhTkw3Od.eKeiiVyBAHvSoiS7jZ2', '2020-10-15 18:47:10.318592', '2020-10-15 18:47:10.318592', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$wbucPFfbfG.nfSy9Q3L1KuNfAWyujfb0DpEVsGEXN8w95bes0vDGq', '2020-10-15 18:47:10.318592', '2020-10-15 18:47:10.318592', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-15 18:47:10.322190', '2020-10-15 18:47:10.322190');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-15 18:47:10.322190', '2020-10-15 18:47:10.322190');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-15 18:47:10.327293', '2020-10-15 18:47:10.327293');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-15 18:47:10.327293', '2020-10-15 18:47:10.327293')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (2.8ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "properties";
+DELETE FROM "photos";
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (99, 'email@email.com', '1234', '2020-10-15 18:47:10.330055', '2020-10-15 18:47:10.330055');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2020-10-15 18:47:10.330055', '2020-10-15 18:47:10.330055');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin", "full_name") VALUES (100, 'ejemplo1@mail.com', '$2a$12$sgemvpLrw6/d2NwPiZo2D.HebYj6epGv8SQYLe5a5FU34ER6ZBt8e', '2020-10-15 18:47:10.330055', '2020-10-15 18:47:10.330055', 0, 'ejemplo1');
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "isadmin") VALUES (101, 'admin@mail.com', '$2a$12$HBp/QB8aTnRwG01CexyGXeTGkwYSjZq2P53ARuW8ohFxdyGhm3lyC', '2020-10-15 18:47:10.330055', '2020-10-15 18:47:10.330055', 1);
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (980190962, 'MyString', '2020-10-15 18:47:10.333228', '2020-10-15 18:47:10.333228');
+INSERT INTO "properties" ("id", "city", "created_at", "updated_at") VALUES (298486374, 'MyString', '2020-10-15 18:47:10.333228', '2020-10-15 18:47:10.333228');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (980190962, '2020-10-15 18:47:10.336456', '2020-10-15 18:47:10.336456');
+INSERT INTO "photos" ("id", "created_at", "updated_at") VALUES (298486374, '2020-10-15 18:47:10.336456', '2020-10-15 18:47:10.336456')[0m
+  [1m[35m (166.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.7ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------
+UserTest: test_Should_be_capable_of_accessing_the_amount_of_properties_a_user_has
+---------------------------------------------------------------------------------
+  [1m[35m (220.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UserTest: test_should_NOT_create_a_user_with_a_repeated_email
+-------------------------------------------------------------
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (8.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$W1Fjl/Ujugf9ojKy5s95KO7fUZQLNoWdU8gaCahCZbj0/n3jnlqRG"], ["created_at", "2020-10-15 18:47:10.617932"], ["updated_at", "2020-10-15 18:47:10.617932"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$64r8Yrx8YP6.0XI5v3BAHeQcGgkzIPYO0dITOef8mjQ/JBiiE15lO"], ["created_at", "2020-10-15 18:47:10.622500"], ["updated_at", "2020-10-15 18:47:10.622500"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+UserTest: test_should_create_a_new_user
+---------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$HRPQnxemjCU4b.sUqg/bReodhJuULGSQVkS/HeTFQ96PwvTwv6.N6"], ["created_at", "2020-10-15 18:47:10.661660"], ["updated_at", "2020-10-15 18:47:10.661660"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+UserTest: test_should_find_the_new_created_user
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$fXTX7KR9RNctlzVVCaPAX.TspEK8E6wYfCkfM.NV8Okx5jMXXGTkm"], ["created_at", "2020-10-15 18:47:10.669176"], ["updated_at", "2020-10-15 18:47:10.669176"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_should_not_save_user_without_a_password
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$ffV3aZBtuDPp/qRZcvDB4eimgKtfJRXQCrKPSuILxaDHkrd1p0H3q"], ["created_at", "2020-10-15 18:47:10.687370"], ["updated_at", "2020-10-15 18:47:10.687370"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UserTest: test_should_not_save_user_without_proper_email
+--------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$XanVU/u3eJnR.fJPPLDLC.mMCjlE9t.LZc4d9COIu6tesG4oQZiGa"], ["created_at", "2020-10-15 18:47:10.701011"], ["updated_at", "2020-10-15 18:47:10.701011"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UserTest: test_Successfully_create_and_destroy_a_user
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$A66SDu8/4jveH9npkqw5bu8ddZ7G6Toi9H1pn/7ILHKdd8.6MlHQi"], ["created_at", "2020-10-15 18:47:10.723436"], ["updated_at", "2020-10-15 18:47:10.723436"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "notanactualeimail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid1@email.com"], ["password_digest", "$2a$04$A3CXH1qJRjYXVsdlw4GRMOsgK5.gqO.OXSAWgeNabMVPQgm5ypBV2"], ["created_at", "2020-10-15 18:47:10.730902"], ["updated_at", "2020-10-15 18:47:10.730902"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_should_not_save_user_with_an_email_longer_than_255_characters
+----------------------------------------------------------------------------
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486376]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486376]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "valid1@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$H7j3xY8uhg6Rc84OeY1CsemgKeddphTBGH0BqtMH/jJJlv.E7G2Iu"], ["created_at", "2020-10-15 18:47:10.736582"], ["updated_at", "2020-10-15 18:47:10.736582"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (3.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+-------------------------------------------------------------------------------
+UserTest: test_should_not_save_user_with_a_password_no_longer_than_4_characters
+-------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$QEQI3YyUTY7U5YEsAGuvxucJ5NBQmfWqTeAmsB6mCiC/HKpES8ZdO"], ["created_at", "2020-10-15 18:47:10.748870"], ["updated_at", "2020-10-15 18:47:10.748870"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (10.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_should_not_save_user_without_email
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "valid@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+PropertiesControllerTest: test_index:_just_authorized_user
+----------------------------------------------------------
+  [1m[36mUser Create (5.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "valid@email.com"], ["password_digest", "$2a$04$w5xk1CPdSF/bdjfkk8c8eOy1GcQZVOl0YKUbyfVUlX2IYUspfue0a"], ["created_at", "2020-10-15 18:47:10.770734"], ["updated_at", "2020-10-15 18:47:10.770734"], ["full_name", "valid"], ["cellphone", "3001234567"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 298486375]]
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 298486375]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+UsersControllerTest: test_Attempt_accessing_without_logging_in_should_fail
+--------------------------------------------------------------------------
+Started GET "/api/v1/users/1/properties" for 127.0.0.1 at 2020-10-15 13:47:10 -0500
+Processing by Api::V1::PropertiesController#index as JSON
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 200)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_invalid_email
+------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:10 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:10 -0500
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 267ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 652)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 270ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 854)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 279ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 243)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_Failed_log_in_due_to_empty_parameters
+---------------------------------------------------------------
+Completed 200 OK in 265ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Processing by Api::V1::UsersController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  Parameters: {"user_id"=>"1"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 123)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_Failed_sing_up_due_to_invalid_email
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 257ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 542)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 355)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_Tests_the_update_method
+-------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Completed 200 OK in 253ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-10-15 13:47:11 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"invalid", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 3529)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_to_delete_another_user
+----------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "full_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["full_name", "new_name"], ["updated_at", "2020-10-15 18:47:12.513192"], ["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 252ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/101" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"101"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_show_any_user
+---------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1837)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------
+UsersControllerTest: test_authorized_for_user_to_delete_himself
+---------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 266ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2076)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+UsersControllerTest: test_authorized_user_to_show_his_own_user
+--------------------------------------------------------------
+Completed 200 OK in 262ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 8ms (Views: 0.9ms | ActiveRecord: 1.4ms | Allocations: 1849)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+UsersControllerTest: test_check_correct_update_of_user_full_name
+----------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 262ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 263ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1373)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+UsersControllerTest: test_unauthorized_user_to_show_any_other_user
+------------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 261ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started PUT "/api/v1/users/100/" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#update as JSON
+  Parameters: {"full_name"=>"newname", "user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :user_id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "full_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["full_name", "newname"], ["updated_at", "2020-10-15 18:47:13.623768"], ["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.0ms | Allocations: 2442)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_for_index
+--------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:13 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users/101" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"user_id"=>"101"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :correct_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1537)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+UsersControllerTest: test_authorized_for_admin_to_delete_user
+-------------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.7ms | Allocations: 1845)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+UsersControllerTest: test_unauthorized_for_user_for_index
+---------------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 262ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 277ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/api/v1/users/100" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#destroy as JSON
+  Parameters: {"user_id"=>"100"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProperty Load (0.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ?[0m  [["user_id", 100]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 2274)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+UsersControllerTest: test_checks_creation_of_new_user
+-----------------------------------------------------
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"ejemplo1@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 257ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 534)
+Started GET "/api/v1/users" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+Filter chain halted as :isadmin? rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1000)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PropertyTest: test_Should_create,_save,_and_destroy_a_property
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 99], ["created_at", "2020-10-15 18:47:14.753957"], ["updated_at", "2020-10-15 18:47:14.753957"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "photos" WHERE "photos"."property_id" = ?[0m  [["property_id", 980190963]]
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."user_id" = ? LIMIT ?[0m  [["user_id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Destroy (0.2ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 980190963]]
+  [1m[36mProperty Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "properties" WHERE "properties"."user_id" = ? LIMIT ?[0m  [["user_id", 99], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+PropertyTest: test_Should_not_create_a_property_without_the_proper_built_type
+-----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+PropertyTest: test_Should_not_create_a_property_without_a_user_id
+-----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PropertyTest: test_Should_create_a_property
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["hood", "Belen"], ["city", "Pizza"], ["user_id", 99], ["created_at", "2020-10-15 18:47:14.783033"], ["updated_at", "2020-10-15 18:47:14.783033"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PropertyTest: test_Should_have_successfully_created_a_property
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.6ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 99], ["created_at", "2020-10-15 18:47:14.789431"], ["updated_at", "2020-10-15 18:47:14.789431"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 262ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 542)
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-10-15 13:47:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"email"=>"admin@mail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 251ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 534)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/api/v1/users/" for 127.0.0.1 at 2020-10-15 13:47:15 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"email"=>"ejemplo2@mail.com", "password"=>"[FILTERED]", "full_name"=>"ejemplo2", "cellphone"=>"3001234567"}
+[31mUnpermitted parameter: :format[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$04$N8eB1pXup0v1Ea0shcYHc.Qr4M0vxXWLJAhNuSJ4eBGFS616OCDiO"], ["created_at", "2020-10-15 18:47:15.182254"], ["updated_at", "2020-10-15 18:47:15.182254"], ["full_name", "ejemplo2"], ["cellphone", "3001234567"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1500)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m

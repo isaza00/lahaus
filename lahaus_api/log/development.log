@@ -15440,3 +15440,22 @@ Completed 200 OK in 170ms (Views: 1.4ms | ActiveRecord: 98.6ms | Allocations: 43
 [ActiveJob] [PhotoQualityJob] [562bd322-ee24-4c94-be6e-ae0882234b13]   [1m[35m (119.2ms)[0m  [1m[36mcommit transaction[0m
 [ActiveJob] [PhotoQualityJob] [562bd322-ee24-4c94-be6e-ae0882234b13]   ↳ app/jobs/photo_quality_job.rb:13:in `perform'
 [ActiveJob] [PhotoQualityJob] [562bd322-ee24-4c94-be6e-ae0882234b13] Performed PhotoQualityJob (Job ID: 562bd322-ee24-4c94-be6e-ae0882234b13) from Async(default) in 198.52ms
+Started GET "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-14 19:58:35 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#index as JSON
+  Parameters: {"user_id"=>"1", "property_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:9:in `index'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."property_id" = ?[0m  [["property_id", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:11:in `index'
+Completed 200 OK in 64ms (Views: 8.7ms | ActiveRecord: 1.2ms | Allocations: 43091)
+
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (14.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
