@@ -3,31 +3,31 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.create(email: "valid@email.com", password: "1234")
+    @user = User.create(email: "valid@email.com", password: "1234", full_name: "valid", cellphone: "3001234567")
   end
 
   test "should not save user without email" do
-    user = User.new(password: "1234")
+    user = User.new(password: "1234", full_name: "valid", cellphone: "3001234567")
     assert_not user.save, "Saved the user without a email"
   end
 
   test "should not save user without proper email" do
-    user = User.new(email: "notanactualeimail", password: "1234")
+    user = User.new(email: "notanactualeimail", password: "1234", full_name: "valid", cellphone: "3001234567")
     assert_not user.save, "Saved the user without an actual email"
   end
 
   test "should not save user with an email longer than 255 characters" do
-    user = User.new(email: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@email.com", password: "1234")
+    user = User.new(email: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@email.com", password: "1234", full_name: "valid", cellphone: "3001234567")
     assert_not user.save, "Saved the user with an email longer than 255 characters"
   end
 
   test "should not save user without a password" do
-    user = User.new(email: "valid@email.com")
+    user = User.new(email: "valid@email.com", full_name: "valid", cellphone: "3001234567")
     assert_not user.save, "Saved the user without a password"
   end
 
   test "should not save user with a password no longer than 4 characters" do
-    user = User.new(email: "valid@email.com", password: "123")
+    user = User.new(email: "valid@email.com", password: "123", full_name: "valid", cellphone: "3001234567")
     assert_not user.save, "Saved the user with password too short"
   end
 
@@ -40,7 +40,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should NOT create a user with a repeated email" do
-    user = User.create(email: "valid@email.com", password: "1234")
+    user = User.create(email: "valid@email.com", password: "1234", full_name: "valid", cellphone: "3001234567")
     assert_not user.valid?, "Saved an already existing user"
   end
 
@@ -49,7 +49,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "Successfully create and destroy a user" do
-    User.create(email: "valid1@email.com", password: "1234")
+    User.create(email: "valid1@email.com", password: "1234", full_name: "valid", cellphone: "3001234567")
     assert User.exists?(email: "valid1@email.com"), "Didn't find the created user"
     user = User.find_by(email: "valid1@email.com")
     user.destroy

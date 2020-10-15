@@ -20,9 +20,8 @@ property1 = Property.create(user_id: 3, city:"Medellin", hood:"Laureles", built_
 property1 = Property.create(user_id: 4, city:"Medellin", hood:"La America", built_type:"Apartamento")
 property1 = Property.create(user_id: 5, city:"Medellin", hood:"Belen", built_type:"Casa")
 
-photo1 = Photo.create(property_id: 1, url: "http://url.com", accepted: true)
-photo2 = Photo.create(property_id: 1, url: "http://url.com", accepted: false)
-photo3 = Photo.create(property_id: 2, url: "http://url.com", accepted: true)
-photo4 = Photo.create(property_id: 3, url: "http://url.com", accepted: true)
-photo5 = Photo.create(property_id: 4, url: "http://url.com", accepted: true)
-
+photo1 = Photo.create(property_id: 1, url: "http://url.com")
+photo2 = Photo.create(property_id: 1, url: "http://url.com")
+photo3 = Photo.create(property_id: 2, url: "http://url.com")
+photo4 = Photo.create(property_id: 3, url: "http://url.com")
+photo5 = Photo.create(property_id: 4, url: "http://url.com")

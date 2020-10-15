@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_005654) do
+ActiveRecord::Schema.define(version: 2020_10_15_003144) do
 
   create_table "photos", force: :cascade do |t|
     t.string "url"
     t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "accepted", default: false
+    t.boolean "accepted_foc"
+    t.boolean "accepted_lum"
     t.index ["property_id"], name: "index_photos_on_property_id"
   end
 

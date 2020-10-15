@@ -32,52 +32,52 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "unauthorized for user for index" do
-    get "/api/v1/users", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
+    get "/api/v1/users", headers: {"Authorization": "Bearer #{@user_token}" }
     assert_response :unauthorized
     assert_equal '{"message":"Unauthorized"}', @response.body
   end
 
   test "authorized for admin for index" do
-    get "/api/v1/users", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@admin_token}" }
+    get "/api/v1/users", headers: {"Authorization": "Bearer #{@admin_token}" }
     assert_response :ok
     assert_equal JSON.parse(@response.body)["users"].length, User.all.length
   end
 
   test "authorized for admin to show any user" do
-    get "/api/v1/users/100", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@admin_token}" }
+    get "/api/v1/users/100", headers: {"Authorization": "Bearer #{@admin_token}" }
     assert_response :ok
     assert_equal JSON.parse(@response.body)["user"]["email"], users(:three).email
   end
 
   test "unauthorized user to show any other user" do
-    get "/api/v1/users/101", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
+    get "/api/v1/users/101", headers: {"Authorization": "Bearer #{@user_token}" }
     assert_response :unauthorized
     assert_equal '{"message":"Unauthorized"}', @response.body
   end
 
   test "authorized user to show his own user" do
-    get "/api/v1/users/100", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
+    get "/api/v1/users/100", headers: {"Authorization": "Bearer #{@user_token}" }
     assert_response :ok
     assert_equal JSON.parse(@response.body)["user"]["email"], users(:three).email
   end
 
   test "authorized for user to delete himself" do
     assert_difference('User.count', -1) do
-      delete "/api/v1/users/100", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
+      delete "/api/v1/users/100", headers: {"Authorization": "Bearer #{@user_token}" }
     end
     assert_response 204
   end
 
   test "unauthorized for user to delete another user" do
     assert_difference('User.count', 0) do
-      delete "/api/v1/users/101", headers: { "Content-Type": "application/json", "Authorization": "Bearer #{@user_token}" }
+      delete "/api/v1/users/101", headers: {"Authorization": "Bearer #{@user_token}" }
     end
     assert_response :unauthorized
   end
 
   test "authorized for admin to delete user" do
     assert_difference('User.count', -1) do
-      delete "/api/v1/users/100", headers: { "Content-type": "application/json", "Authorization": "Bearer #{@admin_token}" }
+      delete "/api/v1/users/100", headers: {"Authorization": "Bearer #{@admin_token}" }
     end
     assert_response 204
   end
@@ -95,7 +95,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "check correct update of user full_name" do
-    put "/api/v1/users/100/", headers: { "Content-type": "application/json" }, headers: { "Authorization": "Bearer #{@user_token}" }, params: {full_name: "newname"}
+    put "/api/v1/users/100/", headers: { "Authorization": "Bearer #{@user_token}" }, params: {full_name: "newname"}
     assert_response :ok
     assert_equal JSON.parse(@response.body)["full_name"], "newname"
   end
