@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_10_15_003144) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "photos", force: :cascade do |t|
     t.string "url"
-    t.integer "property_id"
+    t.bigint "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "accepted_foc"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_003144) do
     t.string "hood"
     t.string "city"
     t.string "private_area"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "admon"

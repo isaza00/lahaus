@@ -15459,3 +15459,524 @@ Completed 200 OK in 64ms (Views: 8.7ms | ActiveRecord: 1.2ms | Allocations: 4309
 
   [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (14.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-15 14:04:45 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"url"=>"http:I_did_it_again", "user_id"=>"1", "property_id"=>"1", "photo"=>{"url"=>"http:I_did_it_again"}}
+  [1m[36mUser Load (23.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:48:in `create'
+  [1m[36mProperty Load (10.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+[31mUnpermitted parameters: :format, :user_id, :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mPhoto Create (0.5ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "http:I_did_it_again"], ["property_id", 1], ["created_at", "2020-10-15 19:04:45.247650"], ["updated_at", "2020-10-15 19:04:45.247650"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[35m (85.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: cde146f5-bd38-4519-9ff6-52d422fcad26) to Async(default) with arguments: 9
+Completed 200 OK in 245ms (Views: 0.6ms | ActiveRecord: 124.7ms | Allocations: 57557)
+
+
+[ActiveJob] [PhotoQualityJob] [cde146f5-bd38-4519-9ff6-52d422fcad26] Performing PhotoQualityJob (Job ID: cde146f5-bd38-4519-9ff6-52d422fcad26) from Async(default) enqueued at 2020-10-15T19:04:45Z with arguments: 9
+[ActiveJob] [PhotoQualityJob] [cde146f5-bd38-4519-9ff6-52d422fcad26]   [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [cde146f5-bd38-4519-9ff6-52d422fcad26]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [cde146f5-bd38-4519-9ff6-52d422fcad26] Error performing PhotoQualityJob (Job ID: cde146f5-bd38-4519-9ff6-52d422fcad26) from Async(default) in 3430.1ms: NoMethodError (undefined method `chomp' for nil:NilClass):
+/home/norman/lahaus/lahaus_api/app/jobs/photo_quality_job.rb:8:in `perform'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/execution.rb:40:in `block in perform_now'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:112:in `block in run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/i18n-1.8.5/lib/i18n.rb:313:in `with_locale'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/logging.rb:25:in `block (4 levels) in <module:Logging>'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/notifications.rb:180:in `block in instrument'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/notifications.rb:180:in `instrument'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/logging.rb:24:in `block (3 levels) in <module:Logging>'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/logging.rb:45:in `block in tag_logger'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/tagged_logging.rb:80:in `block in tagged'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/tagged_logging.rb:80:in `tagged'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/logging.rb:45:in `tag_logger'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/logging.rb:21:in `block (2 levels) in <module:Logging>'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:139:in `run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/execution.rb:39:in `perform_now'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/execution.rb:25:in `block in execute'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:112:in `block in run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/railtie.rb:43:in `block (4 levels) in <class:Railtie>'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/reloader.rb:72:in `block in wrap'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/reloader.rb:71:in `wrap'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/railtie.rb:42:in `block (3 levels) in <class:Railtie>'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-6.0.3.3/lib/active_support/callbacks.rb:139:in `run_callbacks'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/execution.rb:23:in `execute'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-6.0.3.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+/home/norman/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-15 14:05:04 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"url"=>"http:I_did_it_again", "user_id"=>"1", "property_id"=>"1", "photo"=>{"url"=>"http:I_did_it_again"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:48:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+[31mUnpermitted parameters: :format, :user_id, :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "http:I_did_it_again"], ["property_id", 1], ["created_at", "2020-10-15 19:05:05.134707"], ["updated_at", "2020-10-15 19:05:05.134707"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[35m (77.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: 26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b) to Async(default) with arguments: 10
+Completed 200 OK in 147ms (Views: 1.9ms | ActiveRecord: 81.1ms | Allocations: 45323)
+
+
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b] Performing PhotoQualityJob (Job ID: 26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b) from Async(default) enqueued at 2020-10-15T19:05:05Z with arguments: 10
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b] DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from perform at /home/norman/lahaus/lahaus_api/app/jobs/photo_quality_job.rb:11)
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   [1m[36mPhoto Update (1.0ms)[0m  [1m[33mUPDATE "photos" SET "accepted_lum" = ?, "accepted_foc" = ?, "updated_at" = ? WHERE "photos"."id" = ?[0m  [["accepted_lum", 1], ["accepted_foc", 0], ["updated_at", "2020-10-15 19:05:05.463621"], ["id", 10]]
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   [1m[35m (103.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b] Performed PhotoQualityJob (Job ID: 26c9da5f-1c06-48cd-bdaf-fcf6a2713d4b) from Async(default) in 195.72ms
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-15 14:08:26 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"url"=>"https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1", "user_id"=>"1", "property_id"=>"1", "photo"=>{"url"=>"https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:48:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+[31mUnpermitted parameters: :format, :user_id, :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mPhoto Create (0.6ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1"], ["property_id", 1], ["created_at", "2020-10-15 19:08:26.225738"], ["updated_at", "2020-10-15 19:08:26.225738"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[35m (100.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: f50c6b4f-61dd-4268-80a8-c8d9e21212fc) to Async(default) with arguments: 11
+Completed 200 OK in 196ms (Views: 3.1ms | ActiveRecord: 104.6ms | Allocations: 45281)
+
+
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc] Performing PhotoQualityJob (Job ID: f50c6b4f-61dd-4268-80a8-c8d9e21212fc) from Async(default) enqueued at 2020-10-15T19:08:26Z with arguments: 11
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc] DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from perform at /home/norman/lahaus/lahaus_api/app/jobs/photo_quality_job.rb:11)
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   [1m[36mPhoto Update (5.0ms)[0m  [1m[33mUPDATE "photos" SET "accepted_lum" = ?, "accepted_foc" = ?, "updated_at" = ? WHERE "photos"."id" = ?[0m  [["accepted_lum", 0], ["accepted_foc", 0], ["updated_at", "2020-10-15 19:08:31.484974"], ["id", 11]]
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   [1m[35m (1077.5ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f50c6b4f-61dd-4268-80a8-c8d9e21212fc] Performed PhotoQualityJob (Job ID: f50c6b4f-61dd-4268-80a8-c8d9e21212fc) from Async(default) in 6042.01ms
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-15 14:15:03 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"url"=>"https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1", "user_id"=>"1", "property_id"=>"1", "photo"=>{"url"=>"https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:48:in `create'
+  [1m[36mProperty Load (1.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+[31mUnpermitted parameters: :format, :user_id, :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mPhoto Create (0.6ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1"], ["property_id", 1], ["created_at", "2020-10-15 19:15:03.293705"], ["updated_at", "2020-10-15 19:15:03.293705"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[35m (76.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: 49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152) to Async(default) with arguments: 12
+Completed 200 OK in 159ms (Views: 1.3ms | ActiveRecord: 80.2ms | Allocations: 44058)
+
+
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152] Performing PhotoQualityJob (Job ID: 49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152) from Async(default) enqueued at 2020-10-15T19:15:03Z with arguments: 12
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152] DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from perform at /home/norman/lahaus/lahaus_api/app/jobs/photo_quality_job.rb:11)
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   [1m[36mPhoto Update (0.3ms)[0m  [1m[33mUPDATE "photos" SET "accepted_lum" = ?, "accepted_foc" = ?, "updated_at" = ? WHERE "photos"."id" = ?[0m  [["accepted_lum", 0], ["accepted_foc", 0], ["updated_at", "2020-10-15 19:15:06.825241"], ["id", 12]]
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   [1m[35m (68.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152] Performed PhotoQualityJob (Job ID: 49bc4e0a-b7d7-4bc8-93b2-a6d9a165b152) from Async(default) in 3354.62ms
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-15 14:15:37 -0500
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"url"=>"https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60", "user_id"=>"1", "property_id"=>"1", "photo"=>{"url"=>"https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:48:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+[31mUnpermitted parameters: :format, :user_id, :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mPhoto Create (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://images.unsplash.com/photo-1546540749-1642fed507fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"], ["property_id", 1], ["created_at", "2020-10-15 19:15:37.378632"], ["updated_at", "2020-10-15 19:15:37.378632"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[35m (134.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: f99714bf-da28-4e2a-932a-c77e6c9ce98f) to Async(default) with arguments: 13
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f] Performing PhotoQualityJob (Job ID: f99714bf-da28-4e2a-932a-c77e6c9ce98f) from Async(default) enqueued at 2020-10-15T19:15:37Z with arguments: 13
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+Completed 200 OK in 162ms (Views: 0.5ms | ActiveRecord: 135.7ms | Allocations: 17289)
+
+
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f] DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from perform at /home/norman/lahaus/lahaus_api/app/jobs/photo_quality_job.rb:11)
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   [1m[36mPhoto Update (0.7ms)[0m  [1m[33mUPDATE "photos" SET "accepted_lum" = ?, "accepted_foc" = ?, "updated_at" = ? WHERE "photos"."id" = ?[0m  [["accepted_lum", 0], ["accepted_foc", 1], ["updated_at", "2020-10-15 19:15:38.525049"], ["id", 13]]
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   [1m[35m (77.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [f99714bf-da28-4e2a-932a-c77e6c9ce98f] Performed PhotoQualityJob (Job ID: f99714bf-da28-4e2a-932a-c77e6c9ce98f) from Async(default) in 1091.94ms
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-15 14:17:15 -0500
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"url"=>"https://images.unsplash.com/photo-1552664467-e8727a018a93?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=225&q=60", "user_id"=>"1", "property_id"=>"1", "photo"=>{"url"=>"https://images.unsplash.com/photo-1552664467-e8727a018a93?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=225&q=60"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:48:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+[31mUnpermitted parameters: :format, :user_id, :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mPhoto Create (0.4ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://images.unsplash.com/photo-1552664467-e8727a018a93?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=225&q=60"], ["property_id", 1], ["created_at", "2020-10-15 19:17:15.169105"], ["updated_at", "2020-10-15 19:17:15.169105"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[35m (129.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: 60b7ba5d-0e87-40b2-bca3-66459247967c) to Async(default) with arguments: 14
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c] Performing PhotoQualityJob (Job ID: 60b7ba5d-0e87-40b2-bca3-66459247967c) from Async(default) enqueued at 2020-10-15T19:17:15Z with arguments: 14
+Completed 200 OK in 158ms (Views: 6.3ms | ActiveRecord: 130.8ms | Allocations: 8700)
+
+
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c] DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from perform at /home/norman/lahaus/lahaus_api/app/jobs/photo_quality_job.rb:11)
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   [1m[36mPhoto Update (1.1ms)[0m  [1m[33mUPDATE "photos" SET "accepted_lum" = ?, "accepted_foc" = ?, "updated_at" = ? WHERE "photos"."id" = ?[0m  [["accepted_lum", 1], ["accepted_foc", 1], ["updated_at", "2020-10-15 19:17:16.247717"], ["id", 14]]
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   [1m[35m (65.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [60b7ba5d-0e87-40b2-bca3-66459247967c] Performed PhotoQualityJob (Job ID: 60b7ba5d-0e87-40b2-bca3-66459247967c) from Async(default) in 1008.65ms
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Started POST "/api/v1/users/1/properties/1/photos" for 127.0.0.1 at 2020-10-15 14:18:45 -0500
+Processing by Api::V1::PhotosController#create as JSON
+  Parameters: {"url"=>"https://i.imgur.com/5BQL7KK.jpg", "user_id"=>"1", "property_id"=>"1", "photo"=>{"url"=>"https://i.imgur.com/5BQL7KK.jpg"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in?'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `correct_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:48:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:49:in `create'
+[31mUnpermitted parameters: :format, :user_id, :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[36mPhoto Create (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://i.imgur.com/5BQL7KK.jpg"], ["property_id", 1], ["created_at", "2020-10-15 19:18:45.564482"], ["updated_at", "2020-10-15 19:18:45.564482"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+  [1m[35m (102.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:51:in `create'
+[ActiveJob] Enqueued PhotoQualityJob (Job ID: ed98a93f-b8da-4de6-9dab-d96e1dd998b3) to Async(default) with arguments: 15
+Completed 200 OK in 115ms (Views: 0.5ms | ActiveRecord: 102.8ms | Allocations: 8543)
+
+
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3] Performing PhotoQualityJob (Job ID: ed98a93f-b8da-4de6-9dab-d96e1dd998b3) from Async(default) enqueued at 2020-10-15T19:18:45Z with arguments: 15
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   ↳ app/jobs/photo_quality_job.rb:5:in `perform'
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3] DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from perform at /home/norman/lahaus/lahaus_api/app/jobs/photo_quality_job.rb:11)
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   [1m[36mPhoto Update (0.9ms)[0m  [1m[33mUPDATE "photos" SET "accepted_lum" = ?, "accepted_foc" = ?, "updated_at" = ? WHERE "photos"."id" = ?[0m  [["accepted_lum", 0], ["accepted_foc", 0], ["updated_at", "2020-10-15 19:18:46.780892"], ["id", 15]]
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   [1m[35m (72.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3]   ↳ app/jobs/photo_quality_job.rb:11:in `perform'
+[ActiveJob] [PhotoQualityJob] [ed98a93f-b8da-4de6-9dab-d96e1dd998b3] Performed PhotoQualityJob (Job ID: ed98a93f-b8da-4de6-9dab-d96e1dd998b3) from Async(default) in 1193.16ms
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "lahaus_api" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "lahaus_api" ENCODING = 'unicode'[0m
+  [1m[35m (1140.0ms)[0m  [1m[35mCREATE DATABASE "lahaus_api" ENCODING = 'unicode'[0m
+  [1m[35m (810.2ms)[0m  [1m[35mCREATE DATABASE "lahaus_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (83.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (92.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3624123497960992740)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200920140300)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (79.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200920140300"]]
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToUsers (20200920142212)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200920142212"]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProperties (20200928162141)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (87.8ms)[0m  [1m[35mCREATE TABLE "properties" ("id" bigserial primary key, "project" character varying, "type" character varying, "price" integer, "address" character varying, "apt" character varying, "tower" character varying, "hood" character varying, "city" character varying, "private_area" float, "estrato" integer, "beds" integer, "baths" integer, "contact_1" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e41321a67c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (48.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_properties_on_user_id" ON "properties"  ("user_id")[0m
+  [1m[35m (37.3ms)[0m  [1m[35mCREATE  INDEX  "index_properties_on_type" ON "properties"  ("type")[0m
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE  INDEX  "index_properties_on_price" ON "properties"  ("price")[0m
+  [1m[35m (42.5ms)[0m  [1m[35mCREATE  INDEX  "index_properties_on_hood" ON "properties"  ("hood")[0m
+  [1m[35m (59.5ms)[0m  [1m[35mCREATE  INDEX  "index_properties_on_city" ON "properties"  ("city")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200928162141"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeDataTypeForPrice (20200928194359)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (304.1ms)[0m  [1m[35mALTER TABLE "properties" ALTER COLUMN "price" TYPE character varying[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200928194359"]]
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeDataTypeForPrivateArea (20200928195320)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (295.4ms)[0m  [1m[35mALTER TABLE "properties" ALTER COLUMN "private_area" TYPE character varying[0m
+  [1m[35m (287.9ms)[0m  [1m[35mALTER TABLE "properties" ALTER COLUMN "estrato" TYPE character varying[0m
+  [1m[36mprimary::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200928195320"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeVariableTypeFromProperties (20200929012706)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" RENAME COLUMN "type" TO "built_type"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER INDEX "index_properties_on_type" RENAME TO "index_properties_on_built_type"[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200929012706"]]
+  [1m[35m (19.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeIndexForUserIdInProperties (20200929014510)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_properties_on_user_id"[0m
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE  INDEX  "index_properties_on_user_id" ON "properties"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200929014510"]]
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhoto (20201005185525)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (90.5ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "url" character varying, "property_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0d5710f200"
+FOREIGN KEY ("property_id")
+  REFERENCES "properties" ("id")
+)[0m
+  [1m[35m (40.7ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_property_id" ON "photos"  ("property_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201005185525"]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIsadminToUsers (20201011142729)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.7ms)[0m  [1m[35mALTER TABLE "users" ADD "isadmin" boolean DEFAULT FALSE[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201011142729"]]
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAcceptedToUsers (20201011143722)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "photos" ADD "accepted" boolean[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201011143722"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToProperties (20201013003510)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "properties" ADD "admon" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "properties" ADD "build_area" character varying[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "properties" ADD "social_class" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "state" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "elevator" boolean[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "common_areas" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "properties" ADD "property_tax" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "properties" ADD "rooms" character varying[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "bathrooms" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "half_bathrooms" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "parking_lot" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "utility_room" boolean[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "properties" ADD "empty_property" boolean[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "properties" ADD "inhabitants" boolean[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "rent" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "mortgage" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" DROP COLUMN "estrato"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "properties" DROP COLUMN "tower"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "properties" DROP COLUMN "beds"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "properties" DROP COLUMN "baths"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "properties" DROP COLUMN "contact_1"[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201013003510"]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToUsers (20201013005654)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "cellphone" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201013005654"]]
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToPhotos (20201015003144)
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "photos" ADD "accepted_lum" boolean[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "photos" RENAME COLUMN "accepted" TO "accepted_foc"[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201015003144"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-15 19:49:35.773340"], ["updated_at", "2020-10-15 19:49:35.773340"]]
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3624123497960992740)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ejemplo1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ejemplo1@mail.com"], ["password_digest", "$2a$12$KzDUnvEPdBneoyVq661zCOJq9DkyeLlsvUoVo0BiWHeU024ckeKmK"], ["created_at", "2020-10-15 19:49:42.227315"], ["updated_at", "2020-10-15 19:49:42.227315"], ["full_name", "juan"], ["cellphone", "3001234567"]]
+  [1m[35m (47.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ejemplo2@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ejemplo2@mail.com"], ["password_digest", "$2a$12$j7kjAlbPlC6fEzyjHFY1WO3cmFkDKY6hJxD3pml2vVXFg9j3HqvqW"], ["created_at", "2020-10-15 19:49:42.592588"], ["updated_at", "2020-10-15 19:49:42.592588"], ["full_name", "pedro"], ["cellphone", "3001234567"]]
+  [1m[35m (60.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ejemplo3@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ejemplo3@mail.com"], ["password_digest", "$2a$12$LEv0a05SmX357IIqqY3be.9ryL11fC6FT56ZegRu1COt0T7mcz226"], ["created_at", "2020-10-15 19:49:42.949284"], ["updated_at", "2020-10-15 19:49:42.949284"], ["full_name", "lucas"], ["cellphone", "3001234567"]]
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ejemplo4@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ejemplo4@mail.com"], ["password_digest", "$2a$12$x6Dg1HGX4U.8bnQpxU3/lOAi/hh.OTHy70wSH0SzxrvnVH7Sq4kLu"], ["created_at", "2020-10-15 19:49:43.242857"], ["updated_at", "2020-10-15 19:49:43.242857"], ["full_name", "mateo"], ["cellphone", "3001234567"]]
+  [1m[35m (43.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ejemplo5@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "full_name", "cellphone") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ejemplo5@mail.com"], ["password_digest", "$2a$12$t352NVHqePCNGxGjUqfZ0uzCChAmTD6Q6IQRcDnKcdrh/hmqSxd.m"], ["created_at", "2020-10-15 19:49:43.547723"], ["updated_at", "2020-10-15 19:49:43.547723"], ["full_name", "judas"], ["cellphone", "3001234567"]]
+  [1m[35m (64.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "isadmin", "full_name", "cellphone") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "admin@mail.com"], ["password_digest", "$2a$12$wdJy.KsAzjP57iBb0CcHOuX0JoD2sg1047xpQV/DFp6iHp3FCfN86"], ["created_at", "2020-10-15 19:49:43.877181"], ["updated_at", "2020-10-15 19:49:43.877181"], ["isadmin", true], ["full_name", "admin"], ["cellphone", "3001234567"]]
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.0ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 1], ["created_at", "2020-10-15 19:49:43.938339"], ["updated_at", "2020-10-15 19:49:43.938339"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProperty Create (1.2ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["built_type", "Apartamento"], ["hood", "Poblado"], ["city", "Medellin"], ["user_id", 2], ["created_at", "2020-10-15 19:49:43.948008"], ["updated_at", "2020-10-15 19:49:43.948008"]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["built_type", "Casa"], ["hood", "Laureles"], ["city", "Medellin"], ["user_id", 3], ["created_at", "2020-10-15 19:49:43.970012"], ["updated_at", "2020-10-15 19:49:43.970012"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.7ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["built_type", "Apartamento"], ["hood", "La America"], ["city", "Medellin"], ["user_id", 4], ["created_at", "2020-10-15 19:49:43.983206"], ["updated_at", "2020-10-15 19:49:43.983206"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("built_type", "hood", "city", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["built_type", "Casa"], ["hood", "Belen"], ["city", "Medellin"], ["user_id", 5], ["created_at", "2020-10-15 19:49:44.003486"], ["updated_at", "2020-10-15 19:49:44.003486"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Create (0.9ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://url.com"], ["property_id", 1], ["created_at", "2020-10-15 19:49:44.030911"], ["updated_at", "2020-10-15 19:49:44.030911"]]
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://url.com"], ["property_id", 1], ["created_at", "2020-10-15 19:49:44.061664"], ["updated_at", "2020-10-15 19:49:44.061664"]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://url.com"], ["property_id", 2], ["created_at", "2020-10-15 19:49:44.084583"], ["updated_at", "2020-10-15 19:49:44.084583"]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Create (0.6ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://url.com"], ["property_id", 3], ["created_at", "2020-10-15 19:49:44.104200"], ["updated_at", "2020-10-15 19:49:44.104200"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Create (0.5ms)[0m  [1m[32mINSERT INTO "photos" ("url", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://url.com"], ["property_id", 4], ["created_at", "2020-10-15 19:49:44.118394"], ["updated_at", "2020-10-15 19:49:44.118394"]]
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
